@@ -73,12 +73,13 @@ p {
 
 #total-score {
     clear: left;
+    margin-left: 5%;
 }
 
 .final-scores {
     float: none;
     position: absolute;
-    left: 90px;
+    left: 15%;
 }
 
 /* Dice */
