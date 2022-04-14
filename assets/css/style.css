@@ -11,6 +11,8 @@ body {
 /* Header */
 header {
     font-family: Grandstander, 'Sans-serif';
+    text-align: center;
+    color: palevioletred;
 }
 
 h1 {
