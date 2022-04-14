@@ -54,3 +54,15 @@ p {
     border: 1px solid black;
     padding-left: 5px;
 }
+
+/* Total Score */
+
+#total-score {
+    clear: left;
+}
+
+.final-scores {
+    float: none;
+    position: absolute;
+    left: 90px;
+}
