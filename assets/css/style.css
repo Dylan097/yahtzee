@@ -148,3 +148,29 @@ p {
 #roll-dice:active {
     box-shadow: inset 0 0 5px 1px;
 }
+
+/* Media Queries */
+
+/* 800px width or less */
+
+@media screen and (max-width: 800px) {
+    .final-scores {
+        left: 20%;
+    }
+}
+
+/* 550px width or less */
+
+@media screen and (max-width: 550px) {
+    .final-scores {
+        left: 30%;
+    }
+}
+
+/* 320px width or less */
+
+@media screen and (max-width: 320px) {
+    .final-scores {
+        left: 35%;
+    }
+}
