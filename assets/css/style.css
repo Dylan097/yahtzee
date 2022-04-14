@@ -129,18 +129,20 @@ p {
     box-shadow: inset 0 0 5px 2px;
 }
 
-.dice:hover,
-#roll-dice:hover,
-.selectable:hover {
-    cursor: pointer;
-}
-
 #roll-dice {
     display: inline-block;
     border-radius: 5px;
     padding: 0 1px;
     box-shadow: 0 0 5px 1px;
     margin: 5px 0 2px 0;
+}
+
+/* Psuedo elements */
+
+.dice:hover,
+#roll-dice:hover,
+.selectable:hover {
+    cursor: pointer;
 }
 
 #roll-dice:active {
