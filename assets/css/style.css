@@ -23,6 +23,13 @@ p {
     font-size: 150%;
 }
 
+/* The Gameboard */
+
+.board {
+    width: 100%;
+    box-shadow: 0 0 5px 1px;
+}
+
 /* Boxes that hold each score */
 
 .score {
@@ -42,7 +49,7 @@ p {
     float: none;
 }
 
-/* Gameboard */
+/* Individual Gameboards */
 
 .game-board {
     width: 50%;
