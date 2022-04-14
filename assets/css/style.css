@@ -33,3 +33,10 @@ p {
     text-align: center;
     padding-bottom: 5px;
 }
+
+/* Gameboard */
+
+.game-board {
+    width: 50%;
+    float: left;
+}
