@@ -33,6 +33,7 @@ p {
     display: flex;
     margin-top: 10px;
     margin-left: 5%;
+    border-radius: 5px;
 }
 
 /* Boxes that hold each score */
@@ -69,6 +70,10 @@ p {
 .lower-scores {
     border: 1px solid black;
     padding-left: 5px;
+}
+
+#upper-scores-total {
+    border-radius: 0 0 0 5px;
 }
 
 /* Bonus points info */
@@ -126,6 +131,7 @@ p {
     background-size: cover;
     margin-left: 5px;
     display: inline-block;
+    border-radius: 10px;
     box-shadow: inset 0 0 5px 2px;
 }
 
