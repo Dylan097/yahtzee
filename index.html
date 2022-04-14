@@ -20,8 +20,9 @@
     <div id="highest-score">
         <div id="high-score">High score <span class="score" id="high-score-total">0</span></div>
     </div>
+    <!-- The full gameboard -->
     <div class="board">
-        <!-- The upper area of the game board -->
+        <!-- The upper area of the gameboard -->
         <div id="upper-board" class="game-board">
             <h2 id="upper">Upper board</h2>
             <div class="upper-scores" id="ones">Ones <span id="ones-score" class="score selectable"></span></div>
@@ -33,13 +34,12 @@
             <div id="upper-scores-subtotal" class="upper-scores">Subtotal <span class="score"
                     id="upper-subtotal">0</span>
             </div>
-            <div id="upper-bonus" class="upper-scores">Bonus (35 points for getting 63 or more) <span class="score"
-                    id="bonus-score"></span>
+            <div id="upper-bonus" class="upper-scores">Bonus* <span class="score" id="bonus-score"></span>
             </div>
             <div id="upper-scores-total" class="totals upper-scores">Total <span class="score upper-total">0</span>
             </div>
         </div>
-        <!-- The lower area of the game board -->
+        <!-- The lower area of the gameboard -->
         <div id="lower-board" class="game-board">
             <h2 id="lower">Lower board</h2>
             <div class="lower-scores" id="three-of-a-kind">3 of a kind <span class="score selectable"
@@ -60,6 +60,8 @@
             </div>
         </div>
     </div>
+    <!-- Info for the bonus points -->
+    <div id="info">*35 extra points for getting 63 or more points</div>
     <!-- The total score of the upper board and lower board combined -->
     <div id="total-score" class="scores">
         <h2 id="total">Total Scores</h2>
