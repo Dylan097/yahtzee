@@ -66,3 +66,42 @@ p {
     position: absolute;
     left: 90px;
 }
+
+/* Dice */
+
+#dice-area {
+    text-align: center;
+}
+
+.one {
+    background: url(../images/dice-face-1.jpg);
+}
+
+.two {
+    background: url(../images/dice-face-2.jpg);
+}
+
+.three {
+    background: url(../images/dice-face-3.jpg);
+}
+
+.four {
+    background: url(../images/dice-face-4.jpg);
+}
+
+.five {
+    background: url(../images/dice-face-5.jpg);
+}
+
+.six {
+    background: url(../images/dice-face-6.jpg);
+}
+
+.dice {
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    margin-left: 5px;
+    display: inline-block;
+    box-shadow: inset 0 0 5px 2px;
+}
