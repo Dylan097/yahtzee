@@ -20,3 +20,14 @@ h1 {
 p {
     font-size: 150%;
 }
+
+/* Boxes that hold each score */
+
+.score {
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 5px;
+}
