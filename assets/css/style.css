@@ -48,6 +48,10 @@ p {
 
 /* High Score */
 
+#highest-score {
+    margin-left: 5%;
+}
+
 #high-score-total {
     float: none;
 }
