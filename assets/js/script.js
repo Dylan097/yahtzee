@@ -143,6 +143,8 @@ function newRound() {
             threeOfAKind();
         } else if (this.id === 'four-of-a-kind-score') {
             fourOfAKind();
+        } else if (this.id === 'small-straight-score') {
+            smallStraight();
         }
         rollDice();
     }
@@ -348,4 +350,77 @@ function fourOfAKind() {
     }
     document.getElementById('four-of-a-kind-score').innerHTML = score;
     //rightScore(score);
+}
+
+/**
+ * Checks if all of the provided numbers can
+ * equal a small straight
+ */
+function checkSmallStraight(a, b, c, d) {
+    let numberedDice = [a, b, c, d];
+    numberedDice.sort();
+    let counter = 0;
+    let straight = false;
+    for (let i = 0; i < numberedDice.length - 1; i++) {
+        console.log(`this number is ${numberedDice[i]} and the next number is ${numberedDice[i+1]}`);
+        if (numberedDice[i] + 1 === numberedDice[i + 1]) {
+            counter++;
+        } else if (numberedDice[i] === numberedDice[i + 1]) {
+            continue;
+        } else {
+            break;
+        }
+        if (counter === 3) {
+            console.log('I found a small straight!');
+            straight = true;
+        }
+    }
+    console.log(`straight = ${straight}`);
+    return straight;
+}
+
+/**
+ * Increments the small straight score
+ * by 30 points if there is a sequence of
+ * 4 dice either from 1-4, 2-5 or 3-6.
+ * If not, returns a score of 0
+ */
+function smallStraight() {
+    let straight = false;
+    for (let i = 0; i < dices.length; i++) {
+        for (let j = 0; j < dices.length; j++) {
+            if (i === j) {
+                continue;
+            }
+            for (let k = 0; k < dices.length; k++) {
+                if (k === j || k === i) {
+                    continue;
+                }
+                for (let l = 0; l < dices.length; l++) {
+                    if (l === j || l === k || l === i) {
+                        continue;
+                    }
+                    console.log(`Checking dices ${i}, ${j}, ${k} and ${l}`);
+                    if (checkSmallStraight(dices[i], dices[j], dices[k], dices[l])) {
+                        straight = true;
+                        break;
+                    }
+                }
+                if (straight) {
+                    break;
+                }
+            }
+            if (straight) {
+                break;
+            }
+        }
+        if (straight) {
+            break;
+        }
+    }
+    if (straight) {
+        document.getElementById('small-straight-score').innerHTML = 30;
+    } else {
+        document.getElementById('small-straight-score').innerHTML = 0;
+    }
 }
