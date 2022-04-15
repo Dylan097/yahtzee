@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 let diceRoll = 3;
 let rollNumber = document.getElementById('remaining-rolls');
 
+// individual dice values
+let dices = [0, 0, 0, 0, 0];
+
 /**
  * Rolls any dice that doesn't have the
  * hold class
@@ -65,21 +68,27 @@ function rollDice() {
                 switch (randomNumber) {
                     case 0:
                         dice[i].classList.add('one');
+                        dices[i] = 1;
                         break;
                     case 1:
                         dice[i].classList.add('two');
+                        dices[i] = 2;
                         break;
                     case 2:
                         dice[i].classList.add('three');
+                        dices[i] = 3;
                         break;
                     case 3:
                         dice[i].classList.add('four');
+                        dices[i] = 4;
                         break;
                     case 4:
                         dice[i].classList.add('five');
+                        dices[i] = 5;
                         break;
                     case 5:
                         dice[i].classList.add('six');
+                        dices[i] = 6;
                         break;
                     default:
                         console.log(`An error has occurred! randomNumber = ${randomNumber}`);
@@ -112,6 +121,12 @@ let totalScore = document.getElementById('game-total');
 function newRound() {
     if (!this.classList.contains('selected')) {
         this.classList.add('selected');
+        diceRoll = 3;
+        for (let i = 0; i < dice.length; i++) {
+            if (dice[i].classList.contains('hold')) {
+                dice[i].classList.remove('hold');
+            }
+        }
         if (this.id === 'ones-score') {
             onesScore();
         } else if (this.id === 'twos-score') {
@@ -124,12 +139,8 @@ function newRound() {
             fivesScore();
         } else if (this.id === 'sixes-score') {
             sixesScore();
-        }
-        diceRoll = 3;
-        for (let i = 0; i < dice.length; i++) {
-            if (dice[i].classList.contains('hold')) {
-                dice[i].classList.remove('hold');
-            }
+        } else if (this.id === 'three-of-a-kind-score') {
+            threeOfAKind();
         }
         rollDice();
     }
@@ -224,6 +235,7 @@ function sixesScore() {
     document.getElementById('sixes-score').innerHTML = score;
     leftScore(score);
 }
+
 /**
  * Adds the subtotal score and then
  * the total score
@@ -241,6 +253,48 @@ function leftScore(scoreUpdate) {
     }
 }
 
+/**
+ * Checks if the given elements
+ * are all equal
+ */
 function equals3(a, b, c) {
     return a === b && b === c;
+}
+
+/**
+ * Increments the three of a kind score
+ * by all the numbers on the dice
+ * if 3 of the dice are equal
+ */
+function threeOfAKind() {
+    let equalNumbers = false;
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        console.log(`Dice ${i} classlist is ${dice[i].classList}`);
+        for (let j = 0; j < dice.length; j++) {
+            if (j !== i) {
+                for (let k = 0; k < dice.length; k++) {
+                    if (k !== j && k !== i) {
+                        console.log(`Checking dices ${i}, ${j} and ${k}`);
+                        if (equals3(dices[i], dices[j], dices[k])) {
+                            equalNumbers = true;
+                            console.log(`Dices ${i}, ${j} and ${k} are all equal!`)
+                            break;
+                        }
+                    }
+                }
+                if (equalNumbers) {
+                    break;
+                }
+            }
+        }
+        if (equalNumbers) {
+            for (let j = 0; j < dice.length; j++) {
+                score += dices[j];
+            }
+            break;
+        }
+    }
+    document.getElementById('three-of-a-kind-score').innerHTML = score;
+    //rightScore(score);
 }
