@@ -109,6 +109,13 @@ function newRound() {
         } else if (this.id === 'fives-score') {
             fivesScore();
         }
+        diceRoll = 3;
+        for (let i = 0; i < dice.length; i++) {
+            if (dice[i].classList.contains('hold')) {
+                dice[i].classList.remove('hold');
+            }
+        }
+        rollDice();
     }
 }
 
