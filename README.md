@@ -77,6 +77,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 ### Contents
 
 - I found the bonus score specification and score on [Wikipedia](https://en.wikipedia.org/wiki/Yahtzee)
+- I found information on how to code part of the small straight on [stack overflow](https://stackoverflow.com/questions/15671620/small-straight-method)
 
 ### Media
 
