@@ -1,7 +1,7 @@
+let dice = document.getElementsByClassName('dice');
 document.addEventListener("DOMContentLoaded", function () {
     let diceRollButton = document.getElementById("roll-dice");
     diceRollButton.addEventListener('click', rollDice);
-    let dice = document.getElementsByClassName('dice');
     for (let i = 0; i < dice.length; i++) {
         dice[i].addEventListener('click', function () {
             if (dice[i].classList.contains('hold')) {
@@ -21,7 +21,6 @@ let diceRoll = 3;
 let rollNumber = document.getElementById('remaining-rolls');
 
 function rollDice() {
-    let dice = document.getElementsByClassName('dice');
     if (diceRoll > 0) {
         for (let i = 0; i < dice.length; i++) {
             if (dice[i].classList.contains('hold')) {
@@ -81,7 +80,6 @@ function newRound() {
 }
 
 function onesScore() {
-    let dice = document.getElementsByClassName('dice');
     let score = 0;
     for (let i = 0; i < dice.length; i++) {
         if (dice[i].classList.contains('one')) {
