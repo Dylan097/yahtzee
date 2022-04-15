@@ -10,10 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add or remove the hold class
         dice[i].addEventListener('click', function () {
-            if (dice[i].classList.contains('hold')) {
-                dice[i].classList.remove('hold');
-            } else {
-                dice[i].classList.add('hold');
+            if (dice[i].classList.length >= 2) {
+                if (dice[i].classList.contains('hold')) {
+                    dice[i].classList.remove('hold');
+                } else {
+                    dice[i].classList.add('hold');
+                }
             }
         });
     }
