@@ -106,6 +106,8 @@ function newRound() {
             threesScore();
         } else if (this.id === 'fours-score') {
             foursScore();
+        } else if (this.id === 'fives-score') {
+            fivesScore();
         }
     }
 }
@@ -164,4 +166,18 @@ function foursScore() {
         }
     }
     document.getElementById('fours-score').innerHTML = score;
+}
+
+/**
+ * Increments the fives score by
+ * 5 times number of 5's
+ */
+function fivesScore() {
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('five')) {
+            score += 5;
+        }
+    }
+    document.getElementById('fives-score').innerHTML = score;
 }
