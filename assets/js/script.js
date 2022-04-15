@@ -207,6 +207,20 @@ function fivesScore() {
 }
 
 /**
+ * Increments the sixes score by
+ * 6 times number of 6's
+ */
+function sixesScore() {
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('six')) {
+            score += 6;
+        }
+    }
+    document.getElementById('sixes-score').innerHTML = score;
+    leftScore(score);
+}
+/**
  * Adds the subtotal score and then
  * the total score
  */
