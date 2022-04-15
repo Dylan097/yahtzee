@@ -1,8 +1,14 @@
+// The dice on the board
 let dice = document.getElementsByClassName('dice');
+
+// Event listener for DOM load
 document.addEventListener("DOMContentLoaded", function () {
+    // Dice roll button
     let diceRollButton = document.getElementById("roll-dice");
     diceRollButton.addEventListener('click', rollDice);
     for (let i = 0; i < dice.length; i++) {
+
+        // Add or remove the hold class
         dice[i].addEventListener('click', function () {
             if (dice[i].classList.contains('hold')) {
                 dice[i].classList.remove('hold');
@@ -11,21 +17,31 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // Gets all the selectable scores
     let selections = document.getElementsByClassName('selectable');
     for (let i = 0; i < selections.length; i++) {
         selections[i].addEventListener('click', newRound);
     }
 })
 
+// How many rolls are left this round
 let diceRoll = 3;
 let rollNumber = document.getElementById('remaining-rolls');
 
+/**
+ * Rolls any dice that doesn't have the
+ * hold class
+ */
 function rollDice() {
     if (diceRoll > 0) {
         for (let i = 0; i < dice.length; i++) {
+            // Check if the dice contains the hold class
             if (dice[i].classList.contains('hold')) {
                 continue;
             } else {
+
+                // Check what class this dice contains
                 if (dice[i].classList.contains('one')) {
                     dice[i].classList.remove('one');
                 } else if (dice[i].classList.contains('two')) {
@@ -39,8 +55,11 @@ function rollDice() {
                 } else if (dice[i].classList.contains('six')) {
                     dice[i].classList.remove('six');
                 }
+
+                // Random number for the dice
                 let randomNumber = Math.floor(Math.random() * 6);
-                console.log(randomNumber);
+
+                // Switch statement to add the relevant class to the selected dice
                 switch (randomNumber) {
                     case 0:
                         dice[i].classList.add('one');
@@ -65,11 +84,17 @@ function rollDice() {
                 }
             }
         }
+
+        // Lower the amount of rolls left this round
         diceRoll--;
         rollNumber.innerHTML = diceRoll;
     }
 }
 
+/**
+ * Starts a new round when a selectable scores
+ * button is clicked
+ */
 function newRound() {
     if (!this.classList.contains('selected')) {
         this.classList.add('selected');
@@ -77,10 +102,16 @@ function newRound() {
             onesScore();
         } else if (this.id === 'twos-score') {
             twosScore();
+        } else if (this.id === 'threes-score') {
+            threesScore();
         }
     }
 }
 
+/**
+ * Increments the ones score by
+ * 1 times number of 1's
+ */
 function onesScore() {
     let score = 0;
     for (let i = 0; i < dice.length; i++) {
@@ -91,6 +122,10 @@ function onesScore() {
     document.getElementById('ones-score').innerHTML = score;
 }
 
+/**
+ * Increments the twos score by
+ * 2 times number of 2's
+ */
 function twosScore() {
     let score = 0;
     for (let i = 0; i < dice.length; i++) {
@@ -99,4 +134,18 @@ function twosScore() {
         }
     }
     document.getElementById('twos-score').innerHTML = score;
+}
+
+/**
+ * Increments the threes score by
+ * 3 times number of 3's
+ */
+function threesScore() {
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('three')) {
+            score += 3;
+        }
+    }
+    document.getElementById('threes-score').innerHTML = score;
 }
