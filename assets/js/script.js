@@ -120,6 +120,8 @@ function newRound() {
             foursScore();
         } else if (this.id === 'fives-score') {
             fivesScore();
+        } else if (this.id === 'sixes-score') {
+            sixesScore();
         }
         diceRoll = 3;
         for (let i = 0; i < dice.length; i++) {
