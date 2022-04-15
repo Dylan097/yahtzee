@@ -41,8 +41,8 @@ p {
 /* Boxes that hold each score */
 
 .score {
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
     border: 1px solid black;
     text-align: center;
     margin-right: 2%;
