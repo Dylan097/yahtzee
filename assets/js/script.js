@@ -240,3 +240,7 @@ function leftScore(scoreUpdate) {
         leftScoreTotal[i].innerHTML = parseInt(bonus.innerText) + score;
     }
 }
+
+function equals3(a, b, c) {
+    return a === b && b === c;
+}
