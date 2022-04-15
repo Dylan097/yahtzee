@@ -91,6 +91,18 @@ function rollDice() {
     }
 }
 
+// Left scores subtotal (before bonus)
+let leftScoreSub = document.getElementById('left-scores-subtotal');
+
+// Left scores total (After bonus)
+let leftScoreTotal = document.getElementById('left-scores-total');
+
+// Right scores total
+let rightScore = document.getElementById('right-scores-total');
+
+// Total score
+let totalScore = document.getElementById('game-total');
+
 /**
  * Starts a new round when a selectable scores
  * button is clicked
