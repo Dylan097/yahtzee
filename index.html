@@ -21,40 +21,40 @@
     <!-- The full gameboard -->
     <div class="board">
         <!-- The upper area of the gameboard -->
-        <div id="upper-board" class="game-board">
-            <h2 id="upper">Upper board</h2>
-            <div class="upper-scores" id="ones">Ones <span id="ones-score" class="score selectable"></span></div>
-            <div class="upper-scores" id="twos">Twos <span id="twos-score" class="score selectable"></span></div>
-            <div class="upper-scores" id="threes">Threes <span id="threes-score" class="score selectable"></span></div>
-            <div class="upper-scores" id="fours">Fours <span id="fours-score" class="score selectable"></span></div>
-            <div class="upper-scores" id="fives">Fives <span id="fives-score" class="score selectable"></span></div>
-            <div class="upper-scores" id="sixes">Sixes <span id="sixes-score" class="score selectable"></span></div>
-            <div id="upper-scores-subtotal" class="upper-scores">Subtotal <span class="score"
-                    id="upper-subtotal">0</span>
+        <div id="left-board" class="game-board">
+            <h2 id="left">Left board</h2>
+            <div class="left-scores" id="ones">Ones <span id="ones-score" class="score selectable"></span></div>
+            <div class="left-scores" id="twos">Twos <span id="twos-score" class="score selectable"></span></div>
+            <div class="left-scores" id="threes">Threes <span id="threes-score" class="score selectable"></span></div>
+            <div class="left-scores" id="fours">Fours <span id="fours-score" class="score selectable"></span></div>
+            <div class="left-scores" id="fives">Fives <span id="fives-score" class="score selectable"></span></div>
+            <div class="left-scores" id="sixes">Sixes <span id="sixes-score" class="score selectable"></span></div>
+            <div id="left-scores-subtotal" class="left-scores">Subtotal <span class="score"
+                    id="left-subtotal">0</span>right
             </div>
-            <div id="upper-bonus" class="upper-scores">Bonus* <span class="score" id="bonus-score"></span>
+            <div id="left-bonus" class="left-scores">Bonus* <span class="score" id="bonus-score"></span>
             </div>
-            <div id="upper-scores-total" class="totals upper-scores">Total <span class="score upper-total">0</span>
+            <div id="left-scores-total" class="totals left-scores">Total <span class="score left-total">0</span>
             </div>
         </div>
         <!-- The lower area of the gameboard -->
-        <div id="lower-board" class="game-board">
-            <h2 id="lower">Lower board</h2>
-            <div class="lower-scores" id="three-of-a-kind">3 of a kind <span class="score selectable"
+        <div id="right-board" class="game-board">
+            <h2 id="right">Right board</h2>
+            <div class="right-scores" id="three-of-a-kind">3 of a kind <span class="score selectable"
                     id="three-of-a-kind-score"></span></div>
-            <div class="lower-scores" id="four-of-a-kind">4 of a kind <span class="score selectable"
+            <div class="right-scores" id="four-of-a-kind">4 of a kind <span class="score selectable"
                     id="four-of-a-kind-score"></span>
             </div>
-            <div class="lower-scores" id="small-straight">Small straight <span class="score selectable"
+            <div class="right-scores" id="small-straight">Small straight <span class="score selectable"
                     id="small-straight-score"></span></div>
-            <div class="lower-scores" id="large-straight">Large straight <span class="score selectable"
+            <div class="right-scores" id="large-straight">Large straight <span class="score selectable"
                     id="large-straight-score"></span></div>
-            <div class="lower-scores" id="full-house">Full house <span class="score selectable"
+            <div class="right-scores" id="full-house">Full house <span class="score selectable"
                     id="full-house-score"></span></div>
-            <div class="lower-scores" id="yahtzee">YAHTZEE <span class="score selectable" id="yahtzee-score"></span>
+            <div class="right-scores" id="yahtzee">YAHTZEE <span class="score selectable" id="yahtzee-score"></span>
             </div>
-            <div class="lower-scores" id="chance">Chance <span class="score selectable" id="chance-score"></span></div>
-            <div id="lower-scores-total" class="totals lower-scores">Total <span class="score lower-total">0</span>
+            <div class="right-scores" id="chance">Chance <span class="score selectable" id="chance-score"></span></div>
+            <div id="right-scores-total" class="totals right-scores">Total <span class="score right-total">0</span>
             </div>
         </div>
     </div>
@@ -63,8 +63,8 @@
     <!-- The total score of the upper board and lower board combined -->
     <div id="total-score" class="scores">
         <h2 id="total">Total Scores</h2>
-        <div class="totals">Upper total <span class="score upper-total final-scores">0</span></div>
-        <div class="totals">Lower total <span class="score lower-total final-scores">0</span></div>
+        <div class="totals">Left total <span class="score left-total final-scores">0</span></div>
+        <div class="totals">Right total <span class="score right-total final-scores">0</span></div>
         <div class="totals">Total score <span class="score final-scores" id="game-total">0</span></div>
     </div>
     <!-- Where the 5 dice will be displayed -->
