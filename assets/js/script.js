@@ -75,6 +75,8 @@ function newRound() {
         this.classList.add('selected');
         if (this.id === 'ones-score') {
             onesScore();
+        } else if (this.id === 'twos-score') {
+            twosScore();
         }
     }
 }
@@ -87,4 +89,14 @@ function onesScore() {
         }
     }
     document.getElementById('ones-score').innerHTML = score;
+}
+
+function twosScore() {
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('two')) {
+            score += 2;
+        }
+    }
+    document.getElementById('twos-score').innerHTML = score;
 }
