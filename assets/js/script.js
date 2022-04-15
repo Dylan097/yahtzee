@@ -141,6 +141,8 @@ function newRound() {
             sixesScore();
         } else if (this.id === 'three-of-a-kind-score') {
             threeOfAKind();
+        } else if (this.id === 'four-of-a-kind-score') {
+            fourOfAKind();
         }
         rollDice();
     }
@@ -254,7 +256,7 @@ function leftScore(scoreUpdate) {
 }
 
 /**
- * Checks if the given elements
+ * Checks if the given numbers
  * are all equal
  */
 function equals3(a, b, c) {
@@ -296,5 +298,54 @@ function threeOfAKind() {
         }
     }
     document.getElementById('three-of-a-kind-score').innerHTML = score;
+    //rightScore(score);
+}
+
+/**
+ * Checks if the given numbers
+ * are all the same
+ */
+function equals4(a, b, c, d) {
+    return a === b && b === c && c === d;
+}
+
+/**
+ * Increments the four of a kind score
+ * by all the numbers in the dice
+ * if 4 of the dice are equal
+ */
+function fourOfAKind() {
+    let equalNumbers = false;
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        console.log(`Dice ${i} classlist is ${dice[i].classList}`);
+        for (let j = 0; j < dice.length; j++) {
+            if (j !== i) {
+                for (let k = 0; k < dice.length; k++) {
+                    if (k !== j && k !== i) {
+                        for (let l = 0; l < dice.length; l++) {
+                            if (l !== j && l !== k && l !== i) {
+                                if (equals4(dices[i], dices[j], dices[k], dices[l])) {
+                                    equalNumbers = true;
+                                    console.log(`Dices ${i}, ${j} and ${k} are all equal!`)
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (equalNumbers) {
+                    break;
+                }
+            }
+        }
+        if (equalNumbers) {
+            for (let j = 0; j < dice.length; j++) {
+                score += dices[j];
+            }
+            break;
+        }
+    }
+    document.getElementById('four-of-a-kind-score').innerHTML = score;
     //rightScore(score);
 }
