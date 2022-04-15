@@ -92,10 +92,10 @@ function rollDice() {
 }
 
 // Left scores subtotal (before bonus)
-let leftScoreSub = document.getElementById('left-scores-subtotal');
+let leftScoreSub = document.getElementById('left-subtotal');
 
 // Left scores total (After bonus)
-let leftScoreTotal = document.getElementById('left-scores-total');
+let leftScoreTotal = document.getElementsByClassName('left-total');
 
 // Right scores total
 let rightScore = document.getElementById('right-scores-total');
@@ -143,6 +143,7 @@ function onesScore() {
         }
     }
     document.getElementById('ones-score').innerHTML = score;
+    leftScore(score);
 }
 
 /**
@@ -157,6 +158,7 @@ function twosScore() {
         }
     }
     document.getElementById('twos-score').innerHTML = score;
+    leftScore(score);
 }
 
 /**
@@ -171,6 +173,7 @@ function threesScore() {
         }
     }
     document.getElementById('threes-score').innerHTML = score;
+    leftScore(score);
 }
 
 /**
@@ -185,6 +188,7 @@ function foursScore() {
         }
     }
     document.getElementById('fours-score').innerHTML = score;
+    leftScore(score);
 }
 
 /**
@@ -199,4 +203,22 @@ function fivesScore() {
         }
     }
     document.getElementById('fives-score').innerHTML = score;
+    leftScore(score);
+}
+
+/**
+ * Adds the subtotal score and then
+ * the total score
+ */
+function leftScore(scoreUpdate) {
+    let score = parseInt(leftScoreSub.innerText);
+    score += scoreUpdate;
+    leftScoreSub.innerHTML = score;
+    let bonus = document.getElementById('bonus-score');
+    if (score >= 63) {
+        bonus.innerHTML = 35;
+    }
+    for (let i = 0; i < leftScoreTotal.length; i++) {
+        leftScoreTotal[i].innerHTML = parseInt(bonus.innerText) + score;
+    }
 }
