@@ -70,3 +70,23 @@ function rollDice() {
         rollNumber.innerHTML = diceRoll;
     }
 }
+
+function newRound() {
+    if (!this.classList.contains('selected')) {
+        this.classList.add('selected');
+        if (this.id === 'ones-score') {
+            onesScore();
+        }
+    }
+}
+
+function onesScore() {
+    let dice = document.getElementsByClassName('dice');
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('one')) {
+            score++;
+        }
+    }
+    document.getElementById('ones-score').innerHTML = score;
+}
