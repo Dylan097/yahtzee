@@ -41,7 +41,7 @@ p {
 /* Boxes that hold each score */
 
 .score {
-    height: 17px;
+    height: 17leftpx;
     width: 17px;
     border: 1px solid black;
     text-align: center;
@@ -68,13 +68,13 @@ p {
     float: left;
 }
 
-.upper-scores,
-.lower-scores {
+.left-scores,
+.right-scores {
     border: 1px solid black;
     padding-left: 5px;
 }
 
-#upper-scores-total {
+#left-scores-total {
     border-radius: 0 0 0 5px;
 }
 
