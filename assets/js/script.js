@@ -104,6 +104,8 @@ function newRound() {
             twosScore();
         } else if (this.id === 'threes-score') {
             threesScore();
+        } else if (this.id === 'fours-score') {
+            foursScore();
         }
     }
 }
@@ -148,4 +150,18 @@ function threesScore() {
         }
     }
     document.getElementById('threes-score').innerHTML = score;
+}
+
+/**
+ * Increments the fours score by
+ * 4 times number of 4's
+ */
+function foursScore() {
+    let score = 0;
+    for (let i = 0; i < dice.length; i++) {
+        if (dice[i].classList.contains('four')) {
+            score += 4;
+        }
+    }
+    document.getElementById('fours-score').innerHTML = score;
 }
