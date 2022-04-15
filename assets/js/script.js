@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    let selections = document.getElementsByClassName('selectable');
+    for (let i = 0; i < selections.length; i++) {
+        selections[i].addEventListener('click', newRound);
+    }
 })
 
 let diceRoll = 3;
