@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     let diceRollButton = document.getElementById("roll-dice");
     diceRollButton.addEventListener('click', rollDice);
+    let dice = document.getElementsByClassName('dice');
+    for (let i = 0; i < dice.length; i++) {
+        dice[i].addEventListener('click', function () {
+            if (dice[i].classList.contains('hold')) {
+                dice[i].classList.remove('hold');
+            } else {
+                dice[i].classList.add('hold');
+            }
+        });
+    }
 })
 
 let diceRoll = 3;
