@@ -147,6 +147,8 @@ function newRound() {
             smallStraight();
         } else if (this.id === 'large-straight-score') {
             largeStraight();
+        } else if (this.id === 'full-house-score') {
+            fullHouse();
         }
         rollDice();
     }
@@ -448,4 +450,61 @@ function largeStraight() {
         }
     }
     document.getElementById('large-straight-score').innerHTML = score;
+}
+
+/**
+ * Checks if the 2 parameters are equal
+ */
+function equals2(a, b) {
+    return a === b;
+}
+
+/**
+ * Checks if the dice forms
+ * 3 of a kind and a pair.
+ * Scores 25 points if so, if not
+ * then scores 0
+ */
+function fullHouse() {
+    dices.sort();
+    let score = 0;
+    for (let i = 0; i < dices.length; i++) {
+        for (let j = 0; j < dices.length; j++) {
+            if (j === i) {
+                continue;
+            }
+            for (let k = 0; k < dices.length; k++) {
+                if (k === j || k === i) {
+                    continue;
+                }
+                for (let l = 0; l < dices.length; l++) {
+                    if (l === k || l === j || l === i) {
+                        continue;
+                    }
+                    for (let m = 0; m < dices.length; m++) {
+                        if (m === l || m === k || m === j || m === i) {
+                            continue;
+                        }
+                        if (equals3(dices[i], dices[j], dices[k]) && equals2(dices[l], dices[m])) {
+                            score = 25;
+                            break;
+                        }
+                    }
+                    if (score === 25) {
+                        break;
+                    }
+                }
+                if (score === 25) {
+                    break;
+                }
+            }
+            if (score === 25) {
+                break;
+            }
+        }
+        if (score === 25) {
+            break;
+        }
+    }
+    document.getElementById('full-house-score').innerHTML = score;
 }
