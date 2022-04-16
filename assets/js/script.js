@@ -1,6 +1,6 @@
 // The dice on the board
 let dice = document.getElementsByClassName('dice');
-
+let gotYahtzee = false;
 // Event listener for DOM load
 document.addEventListener("DOMContentLoaded", function () {
     // Dice roll button
@@ -149,6 +149,8 @@ function newRound() {
             largeStraight();
         } else if (this.id === 'full-house-score') {
             fullHouse();
+        } else if (this.id === 'yahtzee-score') {
+            yahtzee();
         }
         rollDice();
     }
@@ -507,4 +509,27 @@ function fullHouse() {
         }
     }
     document.getElementById('full-house-score').innerHTML = score;
+}
+
+/**
+ * Check if player got all 5 dice
+ * the same number, and if they are,
+ * player receives 50 points. Otherwise,
+ * player receives a score of 0
+ */
+function yahtzee() {
+    let counter = 0;
+    let score = 0;
+    for (let i = 0; i < dices.length - 1; i++) {
+        if (dices[i] === dices[i + 1]) {
+            counter++;
+        } else {
+            break;
+        }
+        if (counter === 4) {
+            score = 50;
+            gotYahtzee = true;
+        }
+    }
+    document.getElementById('yahtzee-score').innerHTML = score;
 }
