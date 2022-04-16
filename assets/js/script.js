@@ -1,6 +1,7 @@
 // The dice on the board
 let dice = document.getElementsByClassName('dice');
 let gotYahtzee = false;
+let round = 0;
 // Event listener for DOM load
 document.addEventListener("DOMContentLoaded", function () {
     // Dice roll button
@@ -121,7 +122,6 @@ let totalScore = document.getElementById('game-total');
 function newRound() {
     if (!this.classList.contains('selected')) {
         this.classList.add('selected');
-        diceRoll = 3;
         for (let i = 0; i < dice.length; i++) {
             if (dice[i].classList.contains('hold')) {
                 dice[i].classList.remove('hold');
@@ -154,7 +154,11 @@ function newRound() {
         } else if (this.id === 'chance-score') {
             chance();
         }
-        rollDice();
+        round++;
+        if (round < 13) {
+            diceRoll = 3;
+            rollDice();
+        }
     }
 }
 
