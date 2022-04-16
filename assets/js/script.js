@@ -151,6 +151,8 @@ function newRound() {
             fullHouse();
         } else if (this.id === 'yahtzee-score') {
             yahtzee();
+        } else if (this.id === 'chance-score') {
+            chance();
         }
         rollDice();
     }
@@ -532,4 +534,16 @@ function yahtzee() {
         }
     }
     document.getElementById('yahtzee-score').innerHTML = score;
+}
+
+/**
+ * Adds all the dice together.
+ * Always shows the sum of all dice together
+ */
+function chance() {
+    let sum = 0;
+    for (let i = 0; i < dices.length; i++) {
+        sum += dices[i];
+    }
+    document.getElementById('chance-score').innerHTML = sum;
 }
