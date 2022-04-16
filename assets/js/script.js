@@ -145,6 +145,8 @@ function newRound() {
             fourOfAKind();
         } else if (this.id === 'small-straight-score') {
             smallStraight();
+        } else if (this.id === 'large-straight-score') {
+            largeStraight();
         }
         rollDice();
     }
@@ -423,4 +425,27 @@ function smallStraight() {
     } else {
         document.getElementById('small-straight-score').innerHTML = 0;
     }
+}
+
+/**
+ * Increments the large straight score
+ * by 40 points if there is a sequence of
+ * 5 dice either from 1-5 or 2-6.
+ * If not, returns a score of 0
+ */
+function largeStraight() {
+    dices.sort();
+    let score = 0;
+    let counter = 0;
+    for (let i = 0; i < dice.length - 1; i++) {
+        if (dices[i] + 1 === dices[i + 1]) {
+            counter++;
+        } else {
+            break;
+        }
+        if (counter === 4) {
+            score = 40;
+        }
+    }
+    document.getElementById('large-straight-score').innerHTML = score;
 }
