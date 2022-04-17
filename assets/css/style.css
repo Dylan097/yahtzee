@@ -148,23 +148,32 @@ p {
     border: 3px solid red;
 }
 
-#roll-dice {
+#roll-dice,
+#new-game {
     display: inline-block;
     border-radius: 5px;
     padding: 0 1px;
     box-shadow: 0 0 5px 1px;
-    margin: 5px 0 2px 0;
+    margin: 5px 2px;
+}
+
+/* New game button */
+
+#new-game {
+    display: none;
 }
 
 /* Psuedo elements */
 
 .dice:hover,
 #roll-dice:hover,
-.selectable:hover {
+.selectable:hover,
+#new-game:hover {
     cursor: pointer;
 }
 
-#roll-dice:active {
+#roll-dice:active,
+#new-game:active {
     box-shadow: inset 0 0 5px 1px;
 }
 
