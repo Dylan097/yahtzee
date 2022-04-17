@@ -270,6 +270,7 @@ function leftScore(scoreUpdate) {
     for (let i = 0; i < leftScoreTotal.length; i++) {
         leftScoreTotal[i].innerHTML = parseInt(bonus.innerText) + score;
     }
+    finalScore();
 }
 
 /**
@@ -571,4 +572,15 @@ function rightScore(scoreUpdate) {
     for (let i = 0; i < bothRightScores.length; i++) {
         bothRightScores[i].innerHTML = score;
     }
+    finalScore();
+}
+
+/**
+ * Adds the total score of
+ * the game
+ */
+function finalScore() {
+    let score = parseInt(totalScore.innerText);
+    score = parseInt(leftScoreTotal[1].innerText) + parseInt(bothRightScores[1].innerText);
+    totalScore.innerHTML = score;
 }
