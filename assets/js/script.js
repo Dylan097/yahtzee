@@ -269,8 +269,15 @@ function leftScore(scoreUpdate) {
     }
     for (let i = 0; i < leftScoreTotal.length; i++) {
         leftScoreTotal[i].innerHTML = parseInt(bonus.innerText) + score;
+        if (score + parseInt(bonus.innerText) >= 100 && !leftScoreTotal[i].classList.contains('expanded')) {
+            leftScoreTotal[i].classList.add('expanded');
+        }
     }
     finalScore();
+    if (score >= 100 && !leftScoreSub.classList.contains('expanded')) {
+        leftScoreSub.classList.add('expanded');
+    }
+
 }
 
 /**
@@ -571,6 +578,9 @@ function rightScore(scoreUpdate) {
     score += scoreUpdate;
     for (let i = 0; i < bothRightScores.length; i++) {
         bothRightScores[i].innerHTML = score;
+        if (score >= 100 && !bothRightScores[i].classList.contains('expanded')) {
+            bothRightScores[i].classList.add('expanded');
+        }
     }
     finalScore();
 }
@@ -583,4 +593,7 @@ function finalScore() {
     let score = parseInt(totalScore.innerText);
     score = parseInt(leftScoreTotal[1].innerText) + parseInt(bothRightScores[1].innerText);
     totalScore.innerHTML = score;
+    if (score >= 100 && !totalScore.classList.contains('expanded')) {
+        totalScore.classList.add('expanded');
+    }
 }

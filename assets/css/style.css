@@ -51,6 +51,12 @@ p {
     vertical-align: middle;
 }
 
+/* When the scores are over 100 */
+
+.expanded {
+    width: 27px;
+}
+
 /* High Score */
 
 #highest-score {
