@@ -2,6 +2,7 @@
 let dice = document.getElementsByClassName('dice');
 let gotYahtzee = false;
 let round = 0;
+let newGameButton = document.getElementById('new-game');
 // Event listener for DOM load
 document.addEventListener("DOMContentLoaded", function () {
     // Dice roll button
@@ -161,6 +162,9 @@ function newRound() {
         if (round < 13) {
             diceRoll = 3;
             rollDice();
+        } else {
+            newGameButton.style.display = 'inline-block';
+            newGameButton.addEventListener('click', newGame);
         }
     }
 }
@@ -596,4 +600,35 @@ function finalScore() {
     if (score >= 100 && !totalScore.classList.contains('expanded')) {
         totalScore.classList.add('expanded');
     }
+}
+
+function newGame() {
+    let selected = document.getElementsByClassName('selected');
+    for (let i = selected.length - 1; i >= 0; i--) {
+        selected[i].innerHTML = '';
+        selected[i].classList.remove('selected');
+    }
+    newGameButton.style.display = 'none';
+    for (let i = 0; i < 2; i++) {
+        if (leftScoreTotal[i].classList.contains('expanded')) {
+            leftScoreTotal[i].classList.remove('expanded');
+        }
+        leftScoreTotal[i].innerHTML = 0;
+        if (bothRightScores[i].classList.contains('expanded')) {
+            bothRightScores[i].classList.remove('expanded');
+        }
+        bothRightScores[i].innerHTML = 0;
+    }
+    if (totalScore.classList.contains('expanded')) {
+        totalScore.classList.remove('expanded');
+    }
+    totalScore.innerHTML = 0;
+    if (leftScoreSub.classList.contains('expanded')) {
+        leftScoreSub.classList.remove('expanded');
+    }
+    leftScoreSub.innerHTML = 0;
+    document.getElementById('bonus-score').innerHTML = 0;
+    diceRoll = 3;
+    round = 0;
+    rollDice();
 }
