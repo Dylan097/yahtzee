@@ -110,7 +110,10 @@ let leftScoreSub = document.getElementById('left-subtotal');
 let leftScoreTotal = document.getElementsByClassName('left-total');
 
 // Right scores total
-let rightScore = document.getElementById('right-scores-total');
+let rightScoreTotal = document.getElementById('right-scores');
+
+// Both total right scores
+let bothRightScores = document.getElementsByClassName('right-total')
 
 // Total score
 let totalScore = document.getElementById('game-total');
@@ -312,7 +315,7 @@ function threeOfAKind() {
         }
     }
     document.getElementById('three-of-a-kind-score').innerHTML = score;
-    //rightScore(score);
+    rightScore(score);
 }
 
 /**
@@ -361,7 +364,7 @@ function fourOfAKind() {
         }
     }
     document.getElementById('four-of-a-kind-score').innerHTML = score;
-    //rightScore(score);
+    rightScore(score);
 }
 
 /**
@@ -432,9 +435,11 @@ function smallStraight() {
     }
     if (straight) {
         document.getElementById('small-straight-score').innerHTML = 30;
+        rightScore(30);
     } else {
         document.getElementById('small-straight-score').innerHTML = 0;
     }
+
 }
 
 /**
@@ -458,6 +463,7 @@ function largeStraight() {
         }
     }
     document.getElementById('large-straight-score').innerHTML = score;
+    rightScore(score);
 }
 
 /**
@@ -515,6 +521,7 @@ function fullHouse() {
         }
     }
     document.getElementById('full-house-score').innerHTML = score;
+    rightScore(score);
 }
 
 /**
@@ -538,6 +545,7 @@ function yahtzee() {
         }
     }
     document.getElementById('yahtzee-score').innerHTML = score;
+    rightScore(score);
 }
 
 /**
@@ -550,4 +558,17 @@ function chance() {
         sum += dices[i];
     }
     document.getElementById('chance-score').innerHTML = sum;
+    rightScore(sum);
+}
+
+/**
+ * Adds the total score of 
+ * the right board
+ */
+function rightScore(scoreUpdate) {
+    let score = parseInt(rightScoreTotal.innerText);
+    score += scoreUpdate;
+    for (let i = 0; i < bothRightScores.length; i++) {
+        bothRightScores[i].innerHTML = score;
+    }
 }
