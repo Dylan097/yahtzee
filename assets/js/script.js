@@ -119,6 +119,9 @@ let bothRightScores = document.getElementsByClassName('right-total')
 // Total score
 let totalScore = document.getElementById('game-total');
 
+// High score
+let highScore = document.getElementById('high-score-total');
+
 /**
  * Starts a new round when a selectable scores
  * button is clicked
@@ -165,6 +168,7 @@ function newRound() {
         } else {
             newGameButton.style.display = 'inline-block';
             newGameButton.addEventListener('click', newGame);
+            newHighScore();
         }
     }
 }
@@ -602,6 +606,9 @@ function finalScore() {
     }
 }
 
+/**
+ * resets the game back to 0
+ */
 function newGame() {
     let selected = document.getElementsByClassName('selected');
     for (let i = selected.length - 1; i >= 0; i--) {
@@ -631,4 +638,16 @@ function newGame() {
     diceRoll = 3;
     round = 0;
     rollDice();
+}
+
+/**
+ * Checks the current highest score
+ * and changes it if the new score
+ * is higher than the current high score
+ */
+function newHighScore() {
+    let currentHighScore = parseInt(highScore.innerText);
+    let score = parseInt(totalScore.innerText);
+    score = Math.max(score, currentHighScore);
+    highScore.innerHTML = score;
 }
