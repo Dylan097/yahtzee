@@ -127,6 +127,7 @@ let highScore = document.getElementById('high-score-total');
  * button is clicked
  */
 function newRound() {
+    let score;
     if (!this.classList.contains('selected')) {
         this.classList.add('selected');
         for (let i = 0; i < dice.length; i++) {
@@ -135,31 +136,57 @@ function newRound() {
             }
         }
         if (this.id === 'ones-score') {
-            onesScore();
+            score = onesScore();
+            document.getElementById('ones-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'twos-score') {
-            twosScore();
+            score = twosScore();
+            document.getElementById('twos-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'threes-score') {
-            threesScore();
+            score = threesScore();
+            document.getElementById('threes-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'fours-score') {
-            foursScore();
+            score = foursScore();
+            document.getElementById('fours-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'fives-score') {
-            fivesScore();
+            score = fivesScore();
+            document.getElementById('fives-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'sixes-score') {
-            sixesScore();
+            score = sixesScore();
+            document.getElementById('sixes-score').innerHTML = score;
+            leftScore(score);
         } else if (this.id === 'three-of-a-kind-score') {
-            threeOfAKind();
+            score = threeOfAKind();
+            document.getElementById('three-of-a-kind-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'four-of-a-kind-score') {
-            fourOfAKind();
+            score = fourOfAKind();
+            document.getElementById('four-of-a-kind-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'small-straight-score') {
-            smallStraight();
+            score = smallStraight();
+            document.getElementById('small-straight-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'large-straight-score') {
-            largeStraight();
+            score = largeStraight();
+            document.getElementById('large-straight-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'full-house-score') {
-            fullHouse();
+            score = fullHouse();
+            document.getElementById('full-house-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'yahtzee-score') {
-            yahtzee();
+            score = yahtzee();
+            document.getElementById('yahtzee-score').innerHTML = score;
+            rightScore(score);
         } else if (this.id === 'chance-score') {
-            chance();
+            score = chance();
+            document.getElementById('chance-score').innerHTML = score;
+            rightScore(score);
         }
         round++;
         if (round < 13) {
@@ -184,8 +211,7 @@ function onesScore() {
             score++;
         }
     }
-    document.getElementById('ones-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -199,8 +225,7 @@ function twosScore() {
             score += 2;
         }
     }
-    document.getElementById('twos-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -214,8 +239,7 @@ function threesScore() {
             score += 3;
         }
     }
-    document.getElementById('threes-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -229,8 +253,7 @@ function foursScore() {
             score += 4;
         }
     }
-    document.getElementById('fours-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -244,8 +267,7 @@ function fivesScore() {
             score += 5;
         }
     }
-    document.getElementById('fives-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -259,8 +281,7 @@ function sixesScore() {
             score += 6;
         }
     }
-    document.getElementById('sixes-score').innerHTML = score;
-    leftScore(score);
+    return score;
 }
 
 /**
@@ -285,7 +306,6 @@ function leftScore(scoreUpdate) {
     if (score >= 100 && !leftScoreSub.classList.contains('expanded')) {
         leftScoreSub.classList.add('expanded');
     }
-
 }
 
 /**
@@ -310,8 +330,7 @@ function threeOfAKind() {
             break;
         }
     }
-    document.getElementById('three-of-a-kind-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -336,8 +355,7 @@ function fourOfAKind() {
             break;
         }
     }
-    document.getElementById('four-of-a-kind-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -363,8 +381,7 @@ function smallStraight() {
             break;
         }
     }
-    document.getElementById('small-straight-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -387,8 +404,7 @@ function largeStraight() {
             score = 40;
         }
     }
-    document.getElementById('large-straight-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -425,8 +441,7 @@ function fullHouse() {
             score = 25;
         }
     }
-    document.getElementById('full-house-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -449,8 +464,7 @@ function yahtzee() {
             gotYahtzee = true;
         }
     }
-    document.getElementById('yahtzee-score').innerHTML = score;
-    rightScore(score);
+    return score;
 }
 
 /**
@@ -462,8 +476,7 @@ function chance() {
     for (let i = 0; i < dices.length; i++) {
         sum += dices[i];
     }
-    document.getElementById('chance-score').innerHTML = sum;
-    rightScore(sum);
+    return sum;
 }
 
 /**
