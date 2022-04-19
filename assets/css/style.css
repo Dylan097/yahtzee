@@ -17,6 +17,7 @@ header {
     text-align: center;
     color: palevioletred;
     margin-top: 5px;
+    text-shadow: 5px 5px 5px gray;
 }
 
 h1 {
