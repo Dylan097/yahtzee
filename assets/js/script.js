@@ -336,32 +336,17 @@ function equals4(a, b, c, d) {
  * if 4 of the dice are equal
  */
 function fourOfAKind() {
-    let equalNumbers = false;
+    let counter = 0;
     let score = 0;
-    for (let i = 0; i < dice.length; i++) {
-        console.log(`Dice ${i} classlist is ${dice[i].classList}`);
-        for (let j = 0; j < dice.length; j++) {
-            if (j !== i) {
-                for (let k = 0; k < dice.length; k++) {
-                    if (k !== j && k !== i) {
-                        for (let l = 0; l < dice.length; l++) {
-                            if (l !== j && l !== k && l !== i) {
-                                if (equals4(dices[i], dices[j], dices[k], dices[l])) {
-                                    equalNumbers = true;
-                                    console.log(`Dices ${i}, ${j} and ${k} are all equal!`)
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                if (equalNumbers) {
-                    break;
-                }
-            }
+    dices.sort();
+    for (let i = 0; i < 4; i++) {
+        if (dices[i] === dices[i+1]) {
+            counter++;
+        } else if (counter >= 1 && dices[i] !== dices[i+1]) {
+            break;
         }
-        if (equalNumbers) {
-            for (let j = 0; j < dice.length; j++) {
+        if (counter === 3) {
+            for (let j = 0; j < 5; j++) {
                 score += dices[j];
             }
             break;
