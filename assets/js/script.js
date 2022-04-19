@@ -302,29 +302,17 @@ function equals3(a, b, c) {
  * if 3 of the dice are equal
  */
 function threeOfAKind() {
-    let equalNumbers = false;
+    let counter = 0;
     let score = 0;
-    for (let i = 0; i < dice.length; i++) {
-        console.log(`Dice ${i} classlist is ${dice[i].classList}`);
-        for (let j = 0; j < dice.length; j++) {
-            if (j !== i) {
-                for (let k = 0; k < dice.length; k++) {
-                    if (k !== j && k !== i) {
-                        console.log(`Checking dices ${i}, ${j} and ${k}`);
-                        if (equals3(dices[i], dices[j], dices[k])) {
-                            equalNumbers = true;
-                            console.log(`Dices ${i}, ${j} and ${k} are all equal!`)
-                            break;
-                        }
-                    }
-                }
-                if (equalNumbers) {
-                    break;
-                }
-            }
+    dices.sort();
+    for (let i = 0; i < 4; i++) {
+        if (dices[i] === dices[i+1]) {
+            counter++;
+        } else if (counter === 1 && dices[i] !== dices[i+1]) {
+            counter = 0;
         }
-        if (equalNumbers) {
-            for (let j = 0; j < dice.length; j++) {
+        if (counter === 2) {
+            for (let j = 0; j < 5; j++) {
                 score += dices[j];
             }
             break;
