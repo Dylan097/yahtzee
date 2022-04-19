@@ -323,14 +323,6 @@ function threeOfAKind() {
 }
 
 /**
- * Checks if the given numbers
- * are all the same
- */
-function equals4(a, b, c, d) {
-    return a === b && b === c && c === d;
-}
-
-/**
  * Increments the four of a kind score
  * by all the numbers in the dice
  * if 4 of the dice are equal
