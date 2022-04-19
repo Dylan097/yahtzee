@@ -349,33 +349,6 @@ function fourOfAKind() {
 }
 
 /**
- * Checks if all of the provided numbers can
- * equal a small straight
- */
-function checkSmallStraight(a, b, c, d) {
-    let numberedDice = [a, b, c, d];
-    numberedDice.sort();
-    let counter = 0;
-    let straight = false;
-    for (let i = 0; i < numberedDice.length - 1; i++) {
-        console.log(`this number is ${numberedDice[i]} and the next number is ${numberedDice[i+1]}`);
-        if (numberedDice[i] + 1 === numberedDice[i + 1]) {
-            counter++;
-        } else if (numberedDice[i] === numberedDice[i + 1]) {
-            continue;
-        } else {
-            break;
-        }
-        if (counter === 3) {
-            console.log('I found a small straight!');
-            straight = true;
-        }
-    }
-    console.log(`straight = ${straight}`);
-    return straight;
-}
-
-/**
  * Increments the small straight score
  * by 30 points if there is a sequence of
  * 4 dice either from 1-4, 2-5 or 3-6.
