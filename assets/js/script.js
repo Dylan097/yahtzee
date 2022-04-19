@@ -400,13 +400,6 @@ function largeStraight() {
 }
 
 /**
- * Checks if the 2 parameters are equal
- */
-function equals2(a, b) {
-    return a === b;
-}
-
-/**
  * Checks if the dice forms
  * 3 of a kind and a pair.
  * Scores 25 points if so, if not
