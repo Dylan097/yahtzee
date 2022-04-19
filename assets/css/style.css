@@ -172,6 +172,11 @@ p {
     cursor: pointer;
 }
 
+.selectable:hover {
+    border-color: red;
+    box-shadow: inset 0 0 1px 0;
+}
+
 #roll-dice:active,
 #new-game:active {
     box-shadow: inset 0 0 5px 1px;
