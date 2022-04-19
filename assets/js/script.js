@@ -101,6 +101,8 @@ function rollDice() {
         // Lower the amount of rolls left this round
         diceRoll--;
         rollNumber.innerHTML = diceRoll;
+
+        potentialScore();
     }
 }
 
@@ -121,6 +123,69 @@ let totalScore = document.getElementById('game-total');
 
 // High score
 let highScore = document.getElementById('high-score-total');
+
+/**
+ * Shows potential score with
+ * current dice roll
+ */
+function potentialScore() {
+    let allScore = document.getElementsByClassName('selectable');
+    for (let i = 0; i < allScore.length; i++) {
+        let score = 0;
+        if (allScore[i].classList.contains('selected')) {
+            continue;
+        }
+        switch(i) {
+            case 0:
+                score = onesScore();
+                break;
+            case 1:
+                score = twosScore();
+                break;
+            case 2:
+                score = threesScore();
+                break;
+            case 3:
+                score = foursScore();
+                break;
+            case 4:
+                score = fivesScore();
+                break;
+            case 5:
+                score = sixesScore();
+                break;
+            case 6:
+                score = threeOfAKind();
+                break;
+            case 7:
+                score = fourOfAKind();
+                break;
+            case 8:
+                score = smallStraight();
+                break;
+            case 9:
+                score = largeStraight();
+                break;
+            case 10:
+                score = fullHouse();
+                break;
+            case 11:
+                score = yahtzee();
+                break;
+            case 12:
+                score = chance();
+                break;
+            default:
+                console.log('Something has messed up somewhere!')
+                console.log(`You're at index number ${i}`);
+        }
+        if (score !== 0) {
+            allScore[i].innerHTML = score;
+        } else {
+            allScore[i].innerHTML = '';
+        }
+    }
+}
 
 /**
  * Starts a new round when a selectable scores
