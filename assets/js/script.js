@@ -289,14 +289,6 @@ function leftScore(scoreUpdate) {
 }
 
 /**
- * Checks if the given numbers
- * are all equal
- */
-function equals3(a, b, c) {
-    return a === b && b === c;
-}
-
-/**
  * Increments the three of a kind score
  * by all the numbers on the dice
  * if 3 of the dice are equal
