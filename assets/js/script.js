@@ -415,42 +415,29 @@ function equals2(a, b) {
 function fullHouse() {
     dices.sort();
     let score = 0;
-    for (let i = 0; i < dices.length; i++) {
-        for (let j = 0; j < dices.length; j++) {
-            if (j === i) {
-                continue;
-            }
-            for (let k = 0; k < dices.length; k++) {
-                if (k === j || k === i) {
-                    continue;
-                }
-                for (let l = 0; l < dices.length; l++) {
-                    if (l === k || l === j || l === i) {
-                        continue;
-                    }
-                    for (let m = 0; m < dices.length; m++) {
-                        if (m === l || m === k || m === j || m === i) {
-                            continue;
-                        }
-                        if (equals3(dices[i], dices[j], dices[k]) && equals2(dices[l], dices[m])) {
-                            score = 25;
-                            break;
-                        }
-                    }
-                    if (score === 25) {
-                        break;
-                    }
-                }
-                if (score === 25) {
-                    break;
-                }
-            }
-            if (score === 25) {
-                break;
-            }
+    let counter = 0;
+    let pair = false;
+    let triple = false;
+    for (let i = 0; i < 4; i++) {
+        if (dices[i] === dices[i+1]) {
+            counter++;
         }
-        if (score === 25) {
+        if (counter === 1 && dices[i] !== dices[i+1] && !pair) {
+            pair = true;
+            continue;
+        }
+        if (counter === 2 && dices[i] !== dices[i+1] && !pair) {
+            triple = true;
+            continue;
+        }
+        if (dices[i] !== dices[i+1]) {
             break;
+        }
+        if (counter === 3 && !triple && !pair && dices[i] !== dices[i+1]) {
+            break;
+        }
+        if ((counter === 3 && (triple || pair)) || counter === 4) {
+            score = 25;
         }
     }
     document.getElementById('full-house-score').innerHTML = score;
