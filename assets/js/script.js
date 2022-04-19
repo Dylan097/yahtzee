@@ -382,45 +382,24 @@ function checkSmallStraight(a, b, c, d) {
  * If not, returns a score of 0
  */
 function smallStraight() {
-    let straight = false;
-    for (let i = 0; i < dices.length; i++) {
-        for (let j = 0; j < dices.length; j++) {
-            if (i === j) {
-                continue;
-            }
-            for (let k = 0; k < dices.length; k++) {
-                if (k === j || k === i) {
-                    continue;
-                }
-                for (let l = 0; l < dices.length; l++) {
-                    if (l === j || l === k || l === i) {
-                        continue;
-                    }
-                    console.log(`Checking dices ${i}, ${j}, ${k} and ${l}`);
-                    if (checkSmallStraight(dices[i], dices[j], dices[k], dices[l])) {
-                        straight = true;
-                        break;
-                    }
-                }
-                if (straight) {
-                    break;
-                }
-            }
-            if (straight) {
-                break;
-            }
+    let counter = 0;
+    let score = 0;
+    dices.sort();
+    for (let i = 0; i < 4; i++) {
+        if (dices[i] + 1 === dices[i+1]) {
+            counter++;
+        } else if (dices[i] === dices[i+1]) {
+            continue;
+        } else if (counter >= 1 && dices[i] + 1 !== dices[i+1]) {
+            break;
         }
-        if (straight) {
+        if (counter === 3) {
+            score = 30;
             break;
         }
     }
-    if (straight) {
-        document.getElementById('small-straight-score').innerHTML = 30;
-        rightScore(30);
-    } else {
-        document.getElementById('small-straight-score').innerHTML = 0;
-    }
-
+    document.getElementById('small-straight-score').innerHTML = score;
+    rightScore(score);
 }
 
 /**
