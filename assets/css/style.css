@@ -52,6 +52,15 @@ p {
     vertical-align: middle;
 }
 
+.selectable {
+    color: gray;
+}
+
+.selected {
+    color: black;
+    font-weight: bolder;
+}
+
 /* When the scores are over 100 */
 
 .expanded {
