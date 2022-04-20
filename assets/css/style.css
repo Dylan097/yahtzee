@@ -28,6 +28,16 @@ p {
     font-size: 150%;
 }
 
+#rules-button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: black;
+    box-shadow: 0 0 5px 1px;
+    text-shadow: none;
+    padding: 5px;
+}
+
 /* The Gameboard */
 
 .board {
@@ -178,7 +188,8 @@ p {
 .dice:hover,
 #roll-dice:hover,
 .selectable:hover,
-#new-game:hover {
+#new-game:hover,
+#rules-button:hover {
     cursor: pointer;
 }
 
@@ -188,7 +199,8 @@ p {
 }
 
 #roll-dice:active,
-#new-game:active {
+#new-game:active,
+#rules-button:active {
     box-shadow: inset 0 0 5px 1px;
 }
 

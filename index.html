@@ -13,7 +13,22 @@
     <header>
         <h1>Yahtzee!</h1>
         <p>The dice rolling game of chance</p>
+        <div id="rules-button">Rules</div>
     </header>
+    <!-- The rules of the game -->
+    <div id="rule">
+        <p id="close">x</p>
+        <p>The aim of the game, is to get as high of a score as possible, by matching your dice with one of the available scores!</p>
+        <p>Below is an example of each score you can get</p>
+        <div class="example">
+            <p>ones: <span class="score">1</span></p>
+            <span class="one dice-example"></span>
+            <span class="two dice-example"></span>
+            <span class="six dice-example"></span>
+            <span class="two dice-example"></span>
+            <span class="four dice-example"></span>
+        </div>
+    </div>
     <!-- The players personal high score for this session -->
     <div id="highest-score">
         <div id="high-score">High score <span class="score" id="high-score-total">0</span></div>
