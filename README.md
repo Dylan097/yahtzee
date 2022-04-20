@@ -65,6 +65,13 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
     - Score for the sixes wasn't updating with the click
         - When Testing, I noticed that whenever I clicked on the sixes box, the score wouldn't update
         - I hadn't added the sixes score function to the new round function, so when the sixes box was selected, the sixes score function was never getting called. 
+    - Four of a kind and full house weren't displaying truthfully if any dice was held beforehand
+        - When testing, I noticed using the potential scores function, that 4 of a kind wasn't displaying when I had held numbers, same with full house.
+        - This was because, after the dices array was sorted, whenever the computer found a dice with the held class, it'd skip over it entirely, so if this dice number was in a different place in the array, it wouldn't actually update.
+        - I fixed this by checking the class name of the dice being held, and then setting the dice value in that position to the number on the held dice.
+    - Full house wasn't displaying when 3 of a kind was smaller numbers than pair.
+        - When testing, I found that my full house was resulting in 0 in the full house scores section.
+        - I found that I hadn't skipped to the next iteration in the for loop when I had found 3 of a kind, which therefore meant the loop would double check the same condition for the current dice being the same as the next dice, which would in turn break the loop.
 
 #### Unfixed bugs
 
