@@ -38,6 +38,36 @@ p {
     padding: 5px;
 }
 
+/* Game rules */
+
+#rules {
+    width: 80%;
+    margin-left: 10%;
+    position: fixed;
+    z-index: 2;
+    /* display: none; */
+    background: #000000d0;
+    color: white;
+    overflow: scroll;
+    height: 80%;
+    top: 10%;
+}
+
+.example {
+    box-shadow: inset 0 0 5px 1px white;
+}
+
+.example-score {
+    margin-top: 5px;
+    border-color: white;
+}
+
+#close {
+    float: right;
+    padding: 0 5px 5px 5px;
+    box-shadow: inset 0 0 5px 1px;
+}
+
 /* The Gameboard */
 
 .board {
@@ -54,7 +84,7 @@ p {
 .score {
     height: 17px;
     width: 17px;
-    border: 1px solid black;
+    border: 1px solid;
     text-align: center;
     margin-right: 2%;
     float: right;
@@ -64,6 +94,7 @@ p {
 
 .selectable {
     color: gray;
+    border-color: black;
 }
 
 .selected {
@@ -153,7 +184,8 @@ p {
     background: url(../images/dice-face-6.jpg);
 }
 
-.dice {
+.dice,
+.dice-example {
     height: 50px;
     width: 50px;
     background-size: cover;
@@ -189,7 +221,8 @@ p {
 #roll-dice:hover,
 .selectable:hover,
 #new-game:hover,
-#rules-button:hover {
+#rules-button:hover,
+#close:hover {
     cursor: pointer;
 }
 
@@ -202,6 +235,10 @@ p {
 #new-game:active,
 #rules-button:active {
     box-shadow: inset 0 0 5px 1px;
+}
+
+#close:active {
+    box-shadow: inset 0 0 10px 2px;
 }
 
 /* Media Queries */
