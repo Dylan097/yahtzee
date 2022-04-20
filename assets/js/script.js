@@ -54,7 +54,6 @@ function rollDice() {
         for (let i = 0; i < dice.length; i++) {
             // Check if the dice contains the hold class
             if (dice[i].classList.contains('hold')) {
-                console.log(`dice[${i}] is held, and dices[${i}] = ${dices[i]}. dice[${i}] dice has classes ${dice[i].classList}`);
                 if (dice[i].classList.contains('one')) {
                     dices[i] = 1;
                 } else if (dice[i].classList.contains('two')) {
@@ -515,6 +514,7 @@ function fullHouse() {
         }
         if (counter === 2 && dices[i] !== dices[i+1] && !pair) {
             triple = true;
+            continue;
         }
         if (dices[i] !== dices[i+1]) {
             break;
