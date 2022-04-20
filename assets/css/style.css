@@ -45,27 +45,44 @@ p {
     margin-left: 10%;
     position: fixed;
     z-index: 2;
-    /* display: none; */
+    display: none;
     background: #000000d0;
     color: white;
     overflow: scroll;
     height: 80%;
     top: 10%;
+    font-size: 90%;
+    padding: 5px;
 }
 
 .example {
     box-shadow: inset 0 0 5px 1px white;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
 }
 
 .example-score {
     margin-top: 5px;
     border-color: white;
+    font-size: 60%;
 }
 
 #close {
     float: right;
     padding: 0 5px 5px 5px;
     box-shadow: inset 0 0 5px 1px;
+}
+
+.central {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 150%;
+}
+
+.exception {
+    font-size: 150%;
+    font-style: italic;
 }
 
 /* The Gameboard */
