@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < selections.length; i++) {
         selections[i].addEventListener('click', newRound);
     }
+    let rulesButton = document.getElementById('rules-button');
+    let rules = document.getElementById('rules')
+    rulesButton.addEventListener('click', function() {
+            rules.style.display = 'block';
+            let close = document.getElementById('close');
+            close.addEventListener('click', function() {
+                rules.style.display = 'none';
+            })
+    })
 })
 
 // How many rolls are left this round
