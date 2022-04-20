@@ -54,7 +54,20 @@ function rollDice() {
         for (let i = 0; i < dice.length; i++) {
             // Check if the dice contains the hold class
             if (dice[i].classList.contains('hold')) {
-                continue;
+                console.log(`dice[${i}] is held, and dices[${i}] = ${dices[i]}. dice[${i}] dice has classes ${dice[i].classList}`);
+                if (dice[i].classList.contains('one')) {
+                    dices[i] = 1;
+                } else if (dice[i].classList.contains('two')) {
+                    dices[i] = 2;
+                } else if (dice[i].classList.contains('three')) {
+                    dices[i] = 3;
+                } else if (dice[i].classList.contains('four')) {
+                    dices[i] = 4;
+                } else if (dice[i].classList.contains('five')) {
+                    dices[i] = 5;
+                } else {
+                    dices[i] = 6;
+                }
             } else {
 
                 // Check what class this dice contains
@@ -106,7 +119,6 @@ function rollDice() {
                 }
             }
         }
-
         // Lower the amount of rolls left this round
         diceRoll--;
         rollNumber.innerHTML = diceRoll;
@@ -503,7 +515,6 @@ function fullHouse() {
         }
         if (counter === 2 && dices[i] !== dices[i+1] && !pair) {
             triple = true;
-            continue;
         }
         if (dices[i] !== dices[i+1]) {
             break;
