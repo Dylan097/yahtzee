@@ -276,6 +276,13 @@ p {
     }
 }
 
+/* 460px width or less */
+
+@media screen and (max-width: 460px) {
+    header {
+        margin-top: 35px;
+    }
+}
 /* 320px width or less */
 
 @media screen and (max-width: 320px) {
