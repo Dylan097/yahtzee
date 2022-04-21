@@ -7,6 +7,7 @@ let newGameButton = document.getElementById('new-game');
 document.addEventListener("DOMContentLoaded", function () {
     // Dice roll button
     let diceRollButton = document.getElementById("roll-dice");
+    // Roll the dice when the roll dice button is clicked
     diceRollButton.addEventListener('click', rollDice);
     for (let i = 0; i < dice.length; i++) {
 
@@ -25,18 +26,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // Gets all the selectable scores
     let selections = document.getElementsByClassName('selectable');
     for (let i = 0; i < selections.length; i++) {
+        // Start a new round when a score is clicked
         selections[i].addEventListener('click', newRound);
     }
+    // Get the rules button
     let rulesButton = document.getElementById('rules-button');
+    // Get the rules
     let rules = document.getElementsByClassName('rules')[0];
+    // Open or close rules when button is clicked
     rulesButton.addEventListener('click', function() {
             if (rules.classList.contains('display')) {
+                // Close rules if they're open
                 rules.classList.remove('display')
             } else {
+                // Open rules if they're closed
                 rules.classList.add('display');
-            let close = document.getElementById('close');
-            close.addEventListener('click', function() {
-                rules.classList.remove('display');
+                // Get the close button
+                let close = document.getElementById('close');
+                // Closes the rules
+                close.addEventListener('click', function() {
+                    rules.classList.remove('display');
             })
         }
     })
@@ -54,10 +63,12 @@ let dices = [0, 0, 0, 0, 0];
  * hold class
  */
 function rollDice() {
+    // Only roll the dice if there's rolls available
     if (diceRoll > 0) {
         for (let i = 0; i < dice.length; i++) {
             // Check if the dice contains the hold class
             if (dice[i].classList.contains('hold')) {
+                // Checks what the dice number is and assigns it to the dices array position
                 if (dice[i].classList.contains('one')) {
                     dices[i] = 1;
                 } else if (dice[i].classList.contains('two')) {
@@ -72,8 +83,8 @@ function rollDice() {
                     dices[i] = 6;
                 }
             } else {
-
-                // Check what class this dice contains
+                // If the dice isn't held
+                // Check what class this dice contains and remove it
                 if (dice[i].classList.contains('one')) {
                     dice[i].classList.remove('one');
                 } else if (dice[i].classList.contains('two')) {
@@ -125,7 +136,7 @@ function rollDice() {
         // Lower the amount of rolls left this round
         diceRoll--;
         rollNumber.innerHTML = diceRoll;
-
+        // Show what scores a player can currently get
         potentialScore();
     }
 }
@@ -153,9 +164,11 @@ let highScore = document.getElementById('high-score-total');
  * current dice roll
  */
 function potentialScore() {
+    // Gets all the selectable scores
     let allScore = document.getElementsByClassName('selectable');
     for (let i = 0; i < allScore.length; i++) {
         let score = 0;
+        // Check if the score is selected already or not
         if (allScore[i].classList.contains('selected')) {
             continue;
         }
@@ -203,6 +216,7 @@ function potentialScore() {
                 console.log('Something has messed up somewhere!')
                 console.log(`You're at index number ${i}`);
         }
+        // Adds a score if the score isn't 0
         if (score !== 0) {
             allScore[i].innerHTML = score;
         } else {
@@ -217,9 +231,11 @@ function potentialScore() {
  */
 function newRound() {
     let score;
+    // Check if the chosen score has already been selected
     if (!this.classList.contains('selected')) {
         this.classList.add('selected');
         for (let i = 0; i < dice.length; i++) {
+            // Removes the hold class ready for the next roll
             if (dice[i].classList.contains('hold')) {
                 dice[i].classList.remove('hold');
             }
@@ -277,13 +293,20 @@ function newRound() {
             document.getElementById('chance-score').innerHTML = score;
             rightScore(score);
         }
+        // Increase round number by 1
         round++;
+        // All scores filled if round = 13
         if (round < 13) {
+            // Dice is reset then rerolled if round is not >= 13
             diceRoll = 3;
             rollDice();
         } else {
+            // Displays the new game button
             newGameButton.style.display = 'inline-block';
+            // Start a new game when button is clicked
             newGameButton.addEventListener('click', newGame);
+            // Compare the new score to the high score
+            // Replaces the high score if new score is higher
             newHighScore();
         }
     }
@@ -380,18 +403,25 @@ function sixesScore() {
 function leftScore(scoreUpdate) {
     let score = parseInt(leftScoreSub.innerText);
     score += scoreUpdate;
+    // Score subtotal is increased
     leftScoreSub.innerHTML = score;
     let bonus = document.getElementById('bonus-score');
+    // Check if score is greater than or equal to 63
     if (score >= 63) {
+        // Set the bonus score if so
         bonus.innerHTML = 35;
     }
     for (let i = 0; i < leftScoreTotal.length; i++) {
+        // Set left scores to subtotal + bonus
+        // Shows the subtotal if subtotal is less than 63
         leftScoreTotal[i].innerHTML = parseInt(bonus.innerText) + score;
+        // Expands the total scores box if total is greater than 100
         if (score + parseInt(bonus.innerText) >= 100 && !leftScoreTotal[i].classList.contains('expanded')) {
             leftScoreTotal[i].classList.add('expanded');
         }
     }
     finalScore();
+    // Expands the subtotal scores box if subtotal is greater than 100
     if (score >= 100 && !leftScoreSub.classList.contains('expanded')) {
         leftScoreSub.classList.add('expanded');
     }
@@ -403,17 +433,22 @@ function leftScore(scoreUpdate) {
  * if 3 of the dice are equal
  */
 function threeOfAKind() {
+    // Increases by 1 when 2 numbers are equal
     let counter = 0;
     let score = 0;
+    // Sort dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
         if (dices[i] === dices[i+1]) {
             counter++;
         } else if (counter === 1 && dices[i] !== dices[i+1]) {
+            // Resets counter incase of 2 pairs, as will show 3 of a kind as true otherwise
             counter = 0;
         }
         if (counter === 2) {
+            // Three of a kind found
             for (let j = 0; j < 5; j++) {
+                // Adds the total of each dice face
                 score += dices[j];
             }
             break;
@@ -428,17 +463,22 @@ function threeOfAKind() {
  * if 4 of the dice are equal
  */
 function fourOfAKind() {
+    // Counter increases by 1 when 2 dice are the same
     let counter = 0;
     let score = 0;
+    // Sorts dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
         if (dices[i] === dices[i+1]) {
             counter++;
         } else if (counter >= 1 && dices[i] !== dices[i+1]) {
+            // Loop breaks if 1 pair is found, as four of a kind can't be done with 1 pair
             break;
         }
         if (counter === 3) {
+            // Four of a kind found
             for (let j = 0; j < 5; j++) {
+                // Adds the total of each dice face
                 score += dices[j];
             }
             break;
@@ -454,18 +494,24 @@ function fourOfAKind() {
  * If not, returns a score of 0
  */
 function smallStraight() {
+    // Counter increases by 1 when the next number is 1 more than the current number
     let counter = 0;
     let score = 0;
+    // Sorts dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
         if (dices[i] + 1 === dices[i+1]) {
             counter++;
         } else if (dices[i] === dices[i+1]) {
+            // Both dice are the same, small straight can still be found
             continue;
         } else if (counter >= 1 && dices[i] + 1 !== dices[i+1]) {
+            // Dice are too far apart, can't find small straight
             break;
         }
         if (counter === 3) {
+            // Small straight found
+            // Score increases by 30
             score = 30;
             break;
         }
@@ -480,16 +526,21 @@ function smallStraight() {
  * If not, returns a score of 0
  */
 function largeStraight() {
+    // Sort dice from lowest number to highest number
     dices.sort();
     let score = 0;
+    // Counter increases by 1 when 2 numbers increase by 1
     let counter = 0;
     for (let i = 0; i < dice.length - 1; i++) {
         if (dices[i] + 1 === dices[i + 1]) {
             counter++;
         } else {
+            // Dice doesn't increase by 1, large straight not possible
             break;
         }
         if (counter === 4) {
+            // Large straight found
+            // Score increases by 40
             score = 40;
         }
     }
@@ -503,30 +554,43 @@ function largeStraight() {
  * then scores 0
  */
 function fullHouse() {
+    // Sort dice from lowest number to highest number
     dices.sort();
     let score = 0;
+    // Counter increases by 1 when 2 dice are the same
     let counter = 0;
+    // Returns true when a pair is found
     let pair = false;
+    // Returns true when a three of a kind is found
     let triple = false;
     for (let i = 0; i < 4; i++) {
         if (dices[i] === dices[i+1]) {
             counter++;
         }
         if (counter === 1 && dices[i] !== dices[i+1] && !pair) {
+            // Pair found, but next number isn't the same
+            // Pair is now true
             pair = true;
             continue;
         }
         if (counter === 2 && dices[i] !== dices[i+1] && !pair) {
+            // Pair found, but three of a kind also found
+            // next number isn't the same
+            // triple is true, but pair is false
             triple = true;
             continue;
         }
         if (dices[i] !== dices[i+1]) {
+            // Dices are not the same, and the counter doesn't allow for pair or three of a kind
             break;
         }
         if (counter === 3 && !triple && !pair && dices[i] !== dices[i+1]) {
+            // Can get fullhouse with yahtzee
+            // If four of a kind, then loop will break
             break;
         }
         if ((counter === 3 && (triple || pair)) || counter === 4) {
+            // If yahtzee or full house, score increases by 25
             score = 25;
         }
     }
@@ -540,16 +604,21 @@ function fullHouse() {
  * player receives a score of 0
  */
 function yahtzee() {
+    // Counter increases by 1 when 2 numbers are the same
     let counter = 0;
     let score = 0;
     for (let i = 0; i < dices.length - 1; i++) {
         if (dices[i] === dices[i + 1]) {
             counter++;
         } else {
+            // All dice must be the same. Loop breaks as a result of this being different
             break;
         }
         if (counter === 4) {
+            // All dice found the same. Score increases by 50
             score = 50;
+            // Yahtzee has been found, all scores can now increase by an extra 50 points if they get yahtzee
+            // This rules doesn't include small straight or large staright
             gotYahtzee = true;
         }
     }
@@ -563,6 +632,7 @@ function yahtzee() {
 function chance() {
     let sum = 0;
     for (let i = 0; i < dices.length; i++) {
+        // Iterate through each dice face and increase sum by dice face
         sum += dices[i];
     }
     return sum;
@@ -574,10 +644,12 @@ function chance() {
  */
 function rightScore(scoreUpdate) {
     let score = parseInt(rightScoreTotal.innerText);
+    // Increase the right score by updated score 
     score += scoreUpdate;
     for (let i = 0; i < bothRightScores.length; i++) {
         bothRightScores[i].innerHTML = score;
         if (score >= 100 && !bothRightScores[i].classList.contains('expanded')) {
+            // Expands right totals scores boxes if right total is greater than or equal to 100
             bothRightScores[i].classList.add('expanded');
         }
     }
@@ -590,9 +662,11 @@ function rightScore(scoreUpdate) {
  */
 function finalScore() {
     let score = parseInt(totalScore.innerText);
+    // Shows left score total plus right score total
     score = parseInt(leftScoreTotal[1].innerText) + parseInt(bothRightScores[1].innerText);
     totalScore.innerHTML = score;
     if (score >= 100 && !totalScore.classList.contains('expanded')) {
+        // Expands total scores box if total is greater than or equal to 100
         totalScore.classList.add('expanded');
     }
 }
@@ -602,32 +676,46 @@ function finalScore() {
  */
 function newGame() {
     let selected = document.getElementsByClassName('selected');
+    // Removes the selected class from each score, and removes their contents
     for (let i = selected.length - 1; i >= 0; i--) {
         selected[i].innerHTML = '';
         selected[i].classList.remove('selected');
     }
+    // Removes the new game button
     newGameButton.style.display = 'none';
     for (let i = 0; i < 2; i++) {
+        // Checks if current left score total is expanded and removes the class
         if (leftScoreTotal[i].classList.contains('expanded')) {
             leftScoreTotal[i].classList.remove('expanded');
         }
+        // Current left score total is now 0
         leftScoreTotal[i].innerHTML = 0;
+        // Checks if current right score total is expanded and removes the class
         if (bothRightScores[i].classList.contains('expanded')) {
             bothRightScores[i].classList.remove('expanded');
         }
+        // Current right score total is now 0
         bothRightScores[i].innerHTML = 0;
     }
+    // Checks if total score is expanded then removes the class from total score
     if (totalScore.classList.contains('expanded')) {
         totalScore.classList.remove('expanded');
     }
+    // Total score is now 0
     totalScore.innerHTML = 0;
+    // checks if subtotal score is expanded then removes the class from subtotal score
     if (leftScoreSub.classList.contains('expanded')) {
         leftScoreSub.classList.remove('expanded');
     }
+    // Subtotal score is now 0
     leftScoreSub.innerHTML = 0;
+    // Bonus score is now 0
     document.getElementById('bonus-score').innerHTML = 0;
+    // Dice roll is reset to 3
     diceRoll = 3;
+    // Round number is reset to 0
     round = 0;
+    // Dice is rerolled
     rollDice();
 }
 
@@ -639,6 +727,7 @@ function newGame() {
 function newHighScore() {
     let currentHighScore = parseInt(highScore.innerText);
     let score = parseInt(totalScore.innerText);
+    // Checks which score is higher, then assigns is to score
     score = Math.max(score, currentHighScore);
     highScore.innerHTML = score;
 }
