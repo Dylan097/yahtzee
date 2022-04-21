@@ -55,6 +55,10 @@ p {
     padding: 5px;
 }
 
+#display {
+    display: block;
+}
+
 .example {
     box-shadow: inset 0 0 5px 1px white;
     margin-left: 5px;
