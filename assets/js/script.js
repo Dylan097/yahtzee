@@ -28,13 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
         selections[i].addEventListener('click', newRound);
     }
     let rulesButton = document.getElementById('rules-button');
-    let rules = document.getElementById('rules')
+    let rules = document.getElementsByClassName('rules')[0];
     rulesButton.addEventListener('click', function() {
-            rules.style.display = 'block';
+            if (rules.classList.contains('display')) {
+                rules.classList.remove('display')
+            } else {
+                rules.classList.add('display');
             let close = document.getElementById('close');
             close.addEventListener('click', function() {
-                rules.style.display = 'none';
+                rules.classList.remove('display');
             })
+        }
     })
 })
 
