@@ -34,18 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the rules
     let rules = document.getElementsByClassName('rules')[0];
     // Open or close rules when button is clicked
-    rulesButton.addEventListener('click', function() {
-            if (rules.classList.contains('display')) {
-                // Close rules if they're open
-                rules.classList.remove('display')
-            } else {
-                // Open rules if they're closed
-                rules.classList.add('display');
-                // Get the close button
-                let close = document.getElementById('close');
-                // Closes the rules
-                close.addEventListener('click', function() {
-                    rules.classList.remove('display');
+    rulesButton.addEventListener('click', function () {
+        if (rules.classList.contains('display')) {
+            // Close rules if they're open
+            rules.classList.remove('display')
+        } else {
+            // Open rules if they're closed
+            rules.classList.add('display');
+            // Get the close button
+            let close = document.getElementById('close');
+            // Closes the rules
+            close.addEventListener('click', function () {
+                rules.classList.remove('display');
             })
         }
     })
@@ -172,7 +172,7 @@ function potentialScore() {
         if (allScore[i].classList.contains('selected')) {
             continue;
         }
-        switch(i) {
+        switch (i) {
             case 0:
                 score = onesScore();
                 break;
@@ -296,6 +296,13 @@ function newRound() {
         // Increase round number by 1
         round++;
         // All scores filled if round = 13
+        if (gotYahtzee) {
+            let extraScore = multiYahtzee();
+            if (extraScore === 50) {
+                score += 50;
+                this.innerHTML = score;
+            }
+        }
         if (round < 13) {
             // Dice is reset then rerolled if round is not >= 13
             diceRoll = 3;
@@ -439,9 +446,9 @@ function threeOfAKind() {
     // Sort dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
-        if (dices[i] === dices[i+1]) {
+        if (dices[i] === dices[i + 1]) {
             counter++;
-        } else if (counter === 1 && dices[i] !== dices[i+1]) {
+        } else if (counter === 1 && dices[i] !== dices[i + 1]) {
             // Resets counter incase of 2 pairs, as will show 3 of a kind as true otherwise
             counter = 0;
         }
@@ -469,9 +476,9 @@ function fourOfAKind() {
     // Sorts dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
-        if (dices[i] === dices[i+1]) {
+        if (dices[i] === dices[i + 1]) {
             counter++;
-        } else if (counter >= 1 && dices[i] !== dices[i+1]) {
+        } else if (counter >= 1 && dices[i] !== dices[i + 1]) {
             // Loop breaks if 1 pair is found, as four of a kind can't be done with 1 pair
             break;
         }
@@ -500,12 +507,12 @@ function smallStraight() {
     // Sorts dice from lowest number to highest number
     dices.sort();
     for (let i = 0; i < 4; i++) {
-        if (dices[i] + 1 === dices[i+1]) {
+        if (dices[i] + 1 === dices[i + 1]) {
             counter++;
-        } else if (dices[i] === dices[i+1]) {
+        } else if (dices[i] === dices[i + 1]) {
             // Both dice are the same, small straight can still be found
             continue;
-        } else if (counter >= 1 && dices[i] + 1 !== dices[i+1]) {
+        } else if (counter >= 1 && dices[i] + 1 !== dices[i + 1]) {
             // Dice are too far apart, can't find small straight
             break;
         }
@@ -564,27 +571,27 @@ function fullHouse() {
     // Returns true when a three of a kind is found
     let triple = false;
     for (let i = 0; i < 4; i++) {
-        if (dices[i] === dices[i+1]) {
+        if (dices[i] === dices[i + 1]) {
             counter++;
         }
-        if (counter === 1 && dices[i] !== dices[i+1] && !pair) {
+        if (counter === 1 && dices[i] !== dices[i + 1] && !pair) {
             // Pair found, but next number isn't the same
             // Pair is now true
             pair = true;
             continue;
         }
-        if (counter === 2 && dices[i] !== dices[i+1] && !pair) {
+        if (counter === 2 && dices[i] !== dices[i + 1] && !pair) {
             // Pair found, but three of a kind also found
             // next number isn't the same
             // triple is true, but pair is false
             triple = true;
             continue;
         }
-        if (dices[i] !== dices[i+1]) {
+        if (dices[i] !== dices[i + 1]) {
             // Dices are not the same, and the counter doesn't allow for pair or three of a kind
             break;
         }
-        if (counter === 3 && !triple && !pair && dices[i] !== dices[i+1]) {
+        if (counter === 3 && !triple && !pair && dices[i] !== dices[i + 1]) {
             // Can get fullhouse with yahtzee
             // If four of a kind, then loop will break
             break;
@@ -730,4 +737,27 @@ function newHighScore() {
     // Checks which score is higher, then assigns is to score
     score = Math.max(score, currentHighScore);
     highScore.innerHTML = score;
+}
+
+/**
+ * Checks if the user has got another
+ * Yahtzee with their roll
+ */
+function multiYahtzee() {
+    // Counter increases by 1 when 2 numbers are the same
+    let counter = 0;
+    let score = 0;
+    for (let i = 0; i < dices.length - 1; i++) {
+        if (dices[i] === dices[i + 1]) {
+            counter++;
+        } else {
+            // All dice must be the same. Loop breaks as a result of this being different
+            break;
+        }
+        if (counter === 4) {
+            // All dice found the same. Score increases by 50
+            score = 50;
+        }
+    }
+    return score;
 }
