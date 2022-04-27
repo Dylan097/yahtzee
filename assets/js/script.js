@@ -296,7 +296,7 @@ function newRound() {
         // Increase round number by 1
         round++;
         // All scores filled if round = 13
-        if (gotYahtzee) {
+        if (gotYahtzee && score !== 0) {
             let extraScore = multiYahtzee();
             if (extraScore === 50) {
                 score += 50;
