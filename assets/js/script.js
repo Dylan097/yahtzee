@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Closes the rules
             close.addEventListener('click', function () {
                 rules.classList.remove('display');
-            })
+            });
         }
-    })
-})
+    });
+});
 
 // How many rolls are left this round
 let diceRoll = 3;
@@ -151,7 +151,7 @@ let leftScoreTotal = document.getElementsByClassName('left-total');
 let rightScoreTotal = document.getElementById('right-scores');
 
 // Both total right scores
-let bothRightScores = document.getElementsByClassName('right-total')
+let bothRightScores = document.getElementsByClassName('right-total');
 
 // Total score
 let totalScore = document.getElementById('game-total');
@@ -213,7 +213,7 @@ function potentialScore() {
                 score = chance();
                 break;
             default:
-                console.log('Something has messed up somewhere!')
+                console.log('Something has messed up somewhere!');
                 console.log(`You're at index number ${i}`);
         }
         // Adds a score if the score isn't 0
