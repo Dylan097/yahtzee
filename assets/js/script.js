@@ -295,7 +295,7 @@ function newRound() {
         }
         // Increase round number by 1
         round++;
-        // Checks if yahtzee has a score of 50, and if a user has another yahtzee
+        // All scores filled if round = 13
         if (gotYahtzee && score !== 0 && this.id !== 'yahtzee-score') {
             let extraScore = multiYahtzee();
             if (extraScore === 50) {
@@ -303,7 +303,6 @@ function newRound() {
                 this.innerHTML = score;
             }
         }
-        // All scores filled if round = 13
         if (round < 13) {
             // Dice is reset then rerolled if round is not >= 13
             diceRoll = 3;
