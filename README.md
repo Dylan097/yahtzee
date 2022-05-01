@@ -2,6 +2,8 @@
 
 Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get the highest score possible. All 5 dice can be held at any point to get the best score possible for that round, and dice can be rolled up to 3 times per round, playing a total of 13 rounds per game
 
+![Responsive Design](assets/images/yahtzee-responsive-design.png)
+
 ## User Stories
 
 ### First Time Visitors
