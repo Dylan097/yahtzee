@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     rulesButton.addEventListener('click', function () {
         if (rules.classList.contains('display')) {
             // Close rules if they're open
-            rules.classList.remove('display')
+            rules.classList.remove('display');
         } else {
             // Open rules if they're closed
             rules.classList.add('display');
