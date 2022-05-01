@@ -72,14 +72,10 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
     - Full house wasn't displaying when 3 of a kind was smaller numbers than pair.
         - When testing, I found that my full house was resulting in 0 in the full house scores section.
         - I found that I hadn't skipped to the next iteration in the for loop when I had found 3 of a kind, which therefore meant the loop would double check the same condition for the current dice being the same as the next dice, which would in turn break the loop.
-    - Yahtzee was displaying a score of 100 whenever a player would get a yahtzee and use the yahtzee score, rather than displaying 50
-        - When testing the game via Microsoft edge, I found that when I got a yahtzee score, it gave me a score of 100 instead of 50.
-        - I found that this was as a result of the yahtzee bonus being called true before checking the yahtzee bonus.
-        - I fixed this by checking if the score being checked was the yahtzee score or not.
 
 #### Unfixed bugs
 
-- None
+- Yahtzee scores 100 points instead of 50
 
 ### Validation
 
