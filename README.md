@@ -75,7 +75,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 #### Unfixed bugs
 
-- None
+- Yahtzee scores 100 points instead of 50
 
 ### Validation
 
