@@ -76,6 +76,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 - Visible change will be made when a dice is clicked on, to display which is being held.
 
 ![Dice Area](assets/images/yahtzee-dice-area.png)
+![Dice Area With Held Dice](assets/images/yahtzee-dice-area-with-held-dice.png)
 
 ## Testing
 
