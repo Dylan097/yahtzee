@@ -27,9 +27,31 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 ## Features
 
+### Heading
+
+- Displays what the game is called
+- Explains what the game is about
+
+![Header](assets/images/yahtzee-header.png)
+
+### Rules Button
+
+- Displays the rules of the game
+
+![Rules Button](assets/images/yahtzee-rules-button.png)
+
+### Rules
+
+- Explains in detail what the rules of the game are
+- Shows examples of dice rolls to further explain what scores a user can get with the game
+
+![Rules](assets/images/yahtzee-rules.png)
+
 ### High Score Display
 
 - Once fully coded, will update the players high score after each game whenever they get a new, higher score.
+
+![High Score Display](assets/images/yahtzee-high-score.png)
 
 ### Gameboard
 
@@ -37,15 +59,21 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 - Score updates will only work if the player doesn't have a score there already.
 - Clickable score boxes change to a pointer when hovered over.
 
+![Gameboard](assets/images/yahtzee-game-board.png)
+
 ### Total Scores
 
 - Updates as the game goes on to match the full game score.
+
+![Total Scores](assets/images/yahtzee-total-scores.png)
 
 ### Dice Section
 
 - Fully responsive, pointer cursor visible when hovered over the dice and button.
 - Random dice numbers shown when Roll the dice button is clicked.
 - Visible change will be made when a dice is clicked on, to display which is being held.
+
+![Dice Area](assets/images/yahtzee-dice-area.png)
 
 ## Testing
 
