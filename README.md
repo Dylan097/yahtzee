@@ -51,7 +51,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 ### High Score Display
 
-- Once fully coded, will update the players high score after each game whenever they get a new, higher score.
+- Updates the players high score after each game whenever they get a new, higher score.
 
 ![High Score Display](assets/images/yahtzee-high-score.png)
 
