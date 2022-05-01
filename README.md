@@ -93,6 +93,34 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 ![Accessibility Check](assets/images/yahtzee-accessibility-check.png)
 
+### UX Testing
+
+- These are the completed goals compared to the user stories I created at the beginning of the project
+
+#### First Time Visitor
+
+- Using the header of the page, I have made sure that anyone visiting the website for the first time will recognise that the website is a game
+- I added a rules button in the top left hand corner of the website, so that any users can find out the rules of the game
+- In the rules, I added 1 example of each of the scores so that players have an idea of what scores they can get
+- In the rules section, I explained the different scores, and what scores users can get with each scores box
+
+#### Returning Visitor
+
+- In the future, I would like to add a strategies button that displays simple strategies to make the game easier to get higher scores
+- For the returning visitors ease, I made sure to add a faded score, which represents the score the user can get with the current dice roll
+
+#### Frequent Visitor
+
+- I added a high score at the top left of the page so that someone can see their high score. In future, I would like to have the high score saved in a local file, so that the user can close the page, and then see their high score each time they open the website
+
+#### Author Targets
+
+- At the header of the page, I have put a h1 heading of Yahtzee! so that all users know the name of the game they're playing 
+- At the top left of the page is a rules button, which displays the rules of the game for the user
+- In the future, I would like to add a strategies button to give the user simple strategies they can use
+- I added the potential score function to let the user understand what score they can get with their current roll
+- When the user selects a score, the dice will reroll, the number of rolls left will be reset to 3 just before the reroll and will update whatever score they have selected to display the correct score for it
+
 ## Deployment
 
 - The website was deployed via github, and the steps to do so are as follows:
