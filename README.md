@@ -49,8 +49,8 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 ## Testing
 
-- I have tested the website on the following browsers: Google Chrome.
-- I can confirm the website is fully responsive to all screen sizes.
+- I have tested the website on the following browsers: Google Chrome, Safari (mobile version).
+- I can confirm the website is fully responsive to all screen sizes on the browsers stated.
 
 ### Bugs 
 #### Fixed Bugs
@@ -77,14 +77,28 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 - None
 
+### Validation
+
+- Using the [W3C Validator](https://validator.w3.org/nu/#textarea), I can confirm that index.html came back with no errors.
+- Using the [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator), I can confirm that style.css came back with no errors.
+- Using [JSHint](https://jshint.com/), I found that there were no issues with the code.
+
 ## Deployment
+
+- The website was deployed via github, and the steps to do so are as follows:
+    - Find the settings tab at the top of my github repository, and open
+    - Along the left hand side of the settings page, find the pages tab under code and automation, and open
+    - Click on the dropdown menu under source and select the main branch, then save
+    - Once saved, the website will be published
+
+The live link can be found here: [Yahtzee!](https://dylan097.github.io/yahtzee/)
 
 ## Credits
 
 ### Contents
 
 - I found the bonus score specification and score on [Wikipedia](https://en.wikipedia.org/wiki/Yahtzee)
-- I found information on how to code part of the small straight on [stack overflow](https://stackoverflow.com/questions/15671620/small-straight-method)
+- I found information on how to code part of the small straight on [stack overflow](https://stackoverflow.com/questions/15671620/small-straight-method). Some of the other functions codes were inspired by this website as well.
 
 ### Media
 
