@@ -17,152 +17,160 @@
         <div id="rules-button">Rules</div>
     </header>
     <!-- The rules of the game -->
-    <div class="rules">
+    <div class="rules-and-strats">
         <!-- Closes the rules div -->
         <p id="close">x</p>
         <nav>
-            <button class="basic-strat">Basics</button>
-            <button class="advanced-strat">Advanced</button>
+            <button id="game-rules" class="active">Rules</button>
+            <button id="basic-strat">Basic strategies</button>
+            <button id="advanced-strat">Advanced strategies</button>
         </nav>
-        <p>The aim of the game, is to get as high of a score as possible, by matching your dice with one of the
-            available scores!</p>
-        <p>Below is an example of each score you can get</p>
-        <div class="central">Left board</div>
-        <p>Note: if you get a subtotal of 63 or more for the left board, you recieve 35 points extra</p>
-        <!-- Ones score example -->
-        <div class="example">
-            <p>ones: <span class="score example-score">1</span></p>
-            <span class="one dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="four dice-example"></span>
+        <div id="rules">
+            <p>The aim of the game, is to get as high of a score as possible, by matching your dice with one of the
+                available scores!</p>
+            <p>Below is an example of each score you can get</p>
+            <div class="central">Left board</div>
+            <p>Note: if you get a subtotal of 63 or more for the left board, you recieve 35 points extra</p>
+            <!-- Ones score example -->
+            <div class="example">
+                <p>ones: <span class="score example-score">1</span></p>
+                <span class="one dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="four dice-example"></span>
+            </div>
+            <!-- Twos score example -->
+            <div class="example">
+                <p>twos: <span class="score example-score">6</span></p>
+                <span class="two dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="three dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="five dice-example"></span>
+            </div>
+            <!-- Threes score example -->
+            <div class="example">
+                <p>threes: <span class="score example-score">3</span></p>
+                <span class="six dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="three dice-example"></span>
+                <span class="one dice-example"></span>
+                <span class="one dice-example"></span>
+            </div>
+            <!-- Fours score example -->
+            <div class="example">
+                <p>fours: <span class="score example-score">12</span></p>
+                <span class="four dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="one dice-example"></span>
+            </div>
+            <!-- Fives score example -->
+            <div class="example">
+                <p>fives: <span class="score example-score">20</span></p>
+                <span class="five dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="five dice-example"></span>
+            </div>
+            <!-- Sixes score example -->
+            <div class="example">
+                <p>sixes: <span class="score example-score">12</span></p>
+                <span class="three dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="one dice-example"></span>
+            </div>
+            <div class="central">Right board</div>
+            <p>Note: any selected right board score will return as 0 if you don't meet the scores specifications</p>
+            <!-- Three of a kind example -->
+            <div class="example">
+                <p>three of a kind: <span class="score example-score">27</span></p>
+                <span class="six dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="six dice-example"></span>
+            </div>
+            <!-- Four of a kind example -->
+            <div class="example">
+                <p>four of a kind: <span class="score example-score">29</span></p>
+                <span class="six dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="six dice-example"></span>
+                <span class="six dice-example"></span>
+            </div>
+            <!-- Small straight example -->
+            <div class="example">
+                <p>small straight: <span class="score example-score">30</span></p>
+                <span class="four dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="three dice-example"></span>
+            </div>
+            <!-- Large straight example -->
+            <div class="example">
+                <p>large straight: <span class="score example-score">40</span></p>
+                <span class="two dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="three dice-example"></span>
+                <span class="six dice-example"></span>
+            </div>
+            <!-- Full house example -->
+            <div class="example">
+                <p>full house: <span class="score example-score">25</span></p>
+                <span class="one dice-example"></span>
+                <span class="two dice-example"></span>
+                <span class="one dice-example"></span>
+                <span class="one dice-example"></span>
+                <span class="two dice-example"></span>
+            </div>
+            <!-- Yahtzee example -->
+            <div class="example">
+                <p>YAHTZEE: <span class="score example-score">50</span></p>
+                <span class="four dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="four dice-example"></span>
+            </div>
+            <!-- Chance example -->
+            <div class="example">
+                <p>chance: <span class="score example-score">18</span></p>
+                <span class="six dice-example"></span>
+                <span class="five dice-example"></span>
+                <span class="four dice-example"></span>
+                <span class="one dice-example"></span>
+                <span class="two dice-example"></span>
+            </div>
+            <p>Above are just score examples. When you play, these scores can be anything! The only exception to this
+                rule,
+                as follows:</p>
+            <div class="exception">Small straight: 30 points</div>
+            <div class="exception">Large straight: 40 points</div>
+            <div class="exception">Full house: 25 points</div>
+            <div class="exception">Yahtzee: 50 points</div>
+            <p>An extra, slightly more advanced part of this game, is to do with when you get a Yahtzee!</p>
+            <p>So, as you can see from the examples above, a yahtzee is all dice with the same face showing</p>
+            <p>Now, if you were to get a yahtzee, you would receive 50 points. However, this also brings an extra rule
+                into
+                play</p>
+            <p>I like to call it the double whammy rule, but this rule is that you get an extra</p>
+            <p>50 points for getting multiple yahtzee's in 1 game, which means as long as your yahtzee score box</p>
+            <p>has got 50 points in it, you can get bonus 50 points for each yahtzee you get,</p>
+            <p>so the earlier you get a yahtzee, the better</p>
         </div>
-        <!-- Twos score example -->
-        <div class="example">
-            <p>twos: <span class="score example-score">6</span></p>
-            <span class="two dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="three dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="five dice-example"></span>
-        </div>
-        <!-- Threes score example -->
-        <div class="example">
-            <p>threes: <span class="score example-score">3</span></p>
-            <span class="six dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="three dice-example"></span>
-            <span class="one dice-example"></span>
-            <span class="one dice-example"></span>
-        </div>
-        <!-- Fours score example -->
-        <div class="example">
-            <p>fours: <span class="score example-score">12</span></p>
-            <span class="four dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="one dice-example"></span>
-        </div>
-        <!-- Fives score example -->
-        <div class="example">
-            <p>fives: <span class="score example-score">20</span></p>
-            <span class="five dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="five dice-example"></span>
-        </div>
-        <!-- Sixes score example -->
-        <div class="example">
-            <p>sixes: <span class="score example-score">12</span></p>
-            <span class="three dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="one dice-example"></span>
-        </div>
-        <div class="central">Right board</div>
-        <p>Note: any selected right board score will return as 0 if you don't meet the scores specifications</p>
-        <!-- Three of a kind example -->
-        <div class="example">
-            <p>three of a kind: <span class="score example-score">27</span></p>
-            <span class="six dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="six dice-example"></span>
-        </div>
-        <!-- Four of a kind example -->
-        <div class="example">
-            <p>four of a kind: <span class="score example-score">29</span></p>
-            <span class="six dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="six dice-example"></span>
-            <span class="six dice-example"></span>
-        </div>
-        <!-- Small straight example -->
-        <div class="example">
-            <p>small straight: <span class="score example-score">30</span></p>
-            <span class="four dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="three dice-example"></span>
-        </div>
-        <!-- Large straight example -->
-        <div class="example">
-            <p>large straight: <span class="score example-score">40</span></p>
-            <span class="two dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="three dice-example"></span>
-            <span class="six dice-example"></span>
-        </div>
-        <!-- Full house example -->
-        <div class="example">
-            <p>full house: <span class="score example-score">25</span></p>
-            <span class="one dice-example"></span>
-            <span class="two dice-example"></span>
-            <span class="one dice-example"></span>
-            <span class="one dice-example"></span>
-            <span class="two dice-example"></span>
-        </div>
-        <!-- Yahtzee example -->
-        <div class="example">
-            <p>YAHTZEE: <span class="score example-score">50</span></p>
-            <span class="four dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="four dice-example"></span>
-        </div>
-        <!-- Chance example -->
-        <div class="example">
-            <p>chance: <span class="score example-score">18</span></p>
-            <span class="six dice-example"></span>
-            <span class="five dice-example"></span>
-            <span class="four dice-example"></span>
-            <span class="one dice-example"></span>
-            <span class="two dice-example"></span>
-        </div>
-        <p>Above are just score examples. When you play, these scores can be anything! The only exception to this rule,
-            as follows:</p>
-        <div class="exception">Small straight: 30 points</div>
-        <div class="exception">Large straight: 40 points</div>
-        <div class="exception">Full house: 25 points</div>
-        <div class="exception">Yahtzee: 50 points</div>
-        <p>An extra, slightly more advanced part of this game, is to do with when you get a Yahtzee!</p>
-        <p>So, as you can see from the examples above, a yahtzee is all dice with the same face showing</p>
-        <p>Now, if you were to get a yahtzee, you would receive 50 points. However, this also brings an extra rule into
-            play</p>
-        <p>I like to call it the double whammy rule, but this rule is that you get an extra</p>
-        <p>50 points for getting multiple yahtzee's in 1 game, which means as long as your yahtzee score box</p>
-        <p>has got 50 points in it, you can get bonus 50 points for each yahtzee you get,</p>
-        <p>so the earlier you get a yahtzee, the better</p>
     </div>
+    <div class="basics">
+    </div>
+    <div class="advanced"></div>
     <!-- The players personal high score for this session -->
     <div id="highest-score">
         <div id="high-score">High score <span class="score" id="high-score-total">0</span></div>

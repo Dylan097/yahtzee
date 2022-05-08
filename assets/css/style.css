@@ -40,7 +40,7 @@ p {
 
 /* Game rules */
 
-.rules {
+.rules-and-strats {
     width: 80%;
     margin-left: 10%;
     position: fixed;
@@ -287,6 +287,7 @@ p {
         margin-top: 35px;
     }
 }
+
 /* 320px width or less */
 
 @media screen and (max-width: 320px) {
