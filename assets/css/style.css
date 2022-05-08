@@ -89,6 +89,21 @@ p {
     font-style: italic;
 }
 
+button {
+    color: white;
+    background: black;
+    box-shadow: inset 0 0 5px 2px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.active,
+button:hover,
+#close:hover {
+    color: black;
+    background: white;
+}
+
 /* The Gameboard */
 
 .board {
@@ -243,7 +258,8 @@ p {
 .selectable:hover,
 #new-game:hover,
 #rules-button:hover,
-#close:hover {
+#close:hover,
+button:hover {
     cursor: pointer;
 }
 
@@ -258,7 +274,8 @@ p {
     box-shadow: inset 0 0 5px 1px;
 }
 
-#close:active {
+#close:active,
+button:active {
     box-shadow: inset 0 0 10px 2px;
 }
 
