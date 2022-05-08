@@ -141,7 +141,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 #### Returning Visitor
 
-- In the future, I would like to add a strategies button that displays simple strategies to make the game easier to get higher scores
+- In the rules, I have included a navigation bar, that users can cycle through each of rules, basic strategies and advanced strategies to make getting the highest score possible as simple as possible.
 - For the returning visitors ease, I made sure to add a faded score, which represents the score the user can get with the current dice roll
 
 #### Frequent Visitor
@@ -152,7 +152,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 - At the header of the page, I have put a h1 heading of Yahtzee! so that all users know the name of the game they're playing 
 - At the top left of the page is a rules button, which displays the rules of the game for the user
-- In the future, I would like to add a strategies button to give the user simple strategies they can use
+- The rules section includes strategies, which can be cycled through via the navigation bar at the top.
 - I added the potential score function to let the user understand what score they can get with their current roll
 - When the user selects a score, the dice will reroll, the number of rolls left will be reset to 3 just before the reroll and will update whatever score they have selected to display the correct score for it
 
