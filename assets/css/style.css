@@ -59,6 +59,11 @@ h2 {
     text-decoration: underline;
 }
 
+li {
+    list-style-type: square;
+    margin-left: 15px;
+}
+
 .rules,
 .basics,
 .advanced {
