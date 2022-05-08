@@ -76,9 +76,8 @@ li {
 
 .example {
     box-shadow: inset 0 0 5px 1px white;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 10px;
+    margin: 0 5px;
+    padding: 5px 10px;
 }
 
 .example-score {
