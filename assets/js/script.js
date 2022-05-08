@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the rules button
     let rulesButton = document.getElementById('rules-button');
     // Get the rules
-    let rules = document.getElementsByClassName('rules')[0];
+    let rules = document.getElementsByClassName('rules-and-strats')[0];
     // Open or close rules when button is clicked
     rulesButton.addEventListener('click', function () {
         if (rules.classList.contains('display')) {
