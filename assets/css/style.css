@@ -55,6 +55,12 @@ p {
     padding: 5px;
 }
 
+.rules,
+.basics,
+.advanced {
+    display: none;
+}
+
 .display {
     display: block;
 }
