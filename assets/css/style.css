@@ -55,6 +55,10 @@ p {
     padding: 5px;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
 .rules,
 .basics,
 .advanced {
