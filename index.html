@@ -16,15 +16,17 @@
         <!-- Button to display rules -->
         <div id="rules-button">Rules and strategies</div>
     </header>
-    <!-- The rules of the game -->
+    <!-- The rules and strategies of the game -->
     <div class="rules-and-strats">
         <!-- Closes the rules div -->
         <p id="close">x</p>
+        <!-- Rules Navigation Bar -->
         <nav>
             <button id="game-rules" class="active">Rules</button>
             <button id="basic-strat">Basic strategies</button>
             <button id="advanced-strat">Advanced strategies</button>
         </nav>
+        <!-- The Game Rules -->
         <div class="rules display">
             <h2>Rules</h2>
             <p>The aim of the game, is to get as high of a score as possible, by matching your dice with one of the
@@ -168,53 +170,64 @@
             <p>has got 50 points in it, you can get bonus 50 points for each yahtzee you get,</p>
             <p>so the earlier you get a yahtzee, the better</p>
         </div>
+        <!-- Basic Strategies of the game -->
         <div class="basics">
             <h2>Basic Strategies</h2>
             <p>These are some very basic strategies to the game</p>
             <ul>
+                <!-- Hold Feature -->
                 <li>One of the most important strategies in Yahtzee!, is using the dice holding feature!<br>
                     To use this feature, you just have to click on one of the dice, and a red border will show around
                     the selected dice.<br>
                     Here are some examples below:
                     <ul>
                         <li>
+                            <!-- Example of the hold feature in use across 3 rolls -->
                             <div class="example">
+                                <!-- First Roll -->
                                 <span class="six dice-example hold"></span>
                                 <span class="four dice-example"></span>
                                 <span class="three dice-example"></span>
                                 <span class="six dice-example hold"></span>
                                 <span class="one dice-example"></span>
                                 <div>2 rolls remaining this turn</div><br>
+                                <!-- Second Roll -->
                                 <span class="six dice-example hold"></span>
                                 <span class="six dice-example hold"></span>
                                 <span class="two dice-example"></span>
                                 <span class="six dice-example hold"></span>
                                 <span class="four dice-example"></span>
                                 <div>1 rolls remaining this turn</div><br>
+                                <!-- Final Roll -->
                                 <span class="six dice-example hold"></span>
                                 <span class="six dice-example hold"></span>
                                 <span class="six dice-example"></span>
                                 <span class="six dice-example hold"></span>
                                 <span class="five dice-example"></span>
                                 <div>0 rolls remaining this turn</div><br>
+                                <!-- Selecting the Score -->
                                 <p>four-of-a-kind: <span class="score example-score">29</span></p>
                             </div>
                         </li>
                     </ul>
+                    <!-- Extra Note -->
                     Note: when you have no rolls left, holding any dice is useless, as your next turn after selecting a
                     score, will remove the dice hold anyway
                 </li>
             </ul>
         </div>
+        <!-- Advanced Strategies of the game -->
         <div class="advanced">
             <h2>Advanced strategies</h2>
             <p>Here are some slightly more advanced strategies for players to work with!</p>
             <ul>
+                <!-- Using Chance Strategy -->
                 <li>A useful strategy to the game yahtzee, is using the chance score, when you have a low score for a
                     high dice number, like fives or sixes.<br>
                     Here's an example of using this strategy below, with both sixes and chance score being shown:
                     <ul>
                         <li>
+                            <!-- Example of choosing chance over sixes -->
                             <div class="example">
                                 <span class="six dice-example hold"></span>
                                 <span class="one dice-example"></span>
@@ -227,13 +240,16 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- Explanation of why picking chance is better than picking sixes -->
                     Since you have only 2 sixes, your best chance of getting the bonus score, is by trying to get 3 of a
                     kind with sixes or better.
                 </li>
+                <!-- Picking Ones Strategy -->
                 <li>Another good strategy to use, is choosing the ones when you have nothing else to go for, like a
                     straight.<br>
                     Here's some examples: <ul>
                         <li>
+                            <!-- Example of using the ones -->
                             <div class="example">
                                 <span class="five dice-example hold"></span>
                                 <span class="four dice-example hold"></span>
@@ -245,11 +261,13 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- Explanation of why picking ones is the best move -->
                     In this example, you're trying to get a large straight, and only a 3 would get it for you. In some
                     cases, like this, picking chance when you have ones available isn't a great move.<br>
                     This is because chance is very useful for getting you out of situations where you have absolutely no
                     scores to get.
                 </li>
+                <!-- Picking Yahtzee Strategy -->
                 <li>The next top strategy you can use, is when you have used all of the scores on your left board, or if
                     the dice available to you doesn't give you a left score.<br>
                     This strategy is highly risky, since it gives you a score of 0, and also removes the chance of
@@ -260,6 +278,7 @@
                     already used:
                     <ul>
                         <li>
+                            <!-- Example of picking yahtzee when score is 0 -->
                             <div class="example">
                                 <span class="six dice-example"></span>
                                 <span class="four dice-example hold"></span>
@@ -271,8 +290,9 @@
                             </div>
                         </li>
                     </ul>
+                    <!-- Explanation of why picking yahtzee is the best move -->
                     Since yahtzee is the hardest score to get, it's highly unlikely that you'd get a yahtzee, so to
-                    maximize your score in the situation stated above, you should go the yahtzee score.<br>
+                    maximize your score in the situation stated above, you should go for the yahtzee score.<br>
                     You should then go down by score difficulty, which would be large straight, small straight, full
                     house, four of a kind, three of a kind, in order of score difficulty.<br>
                     This would depend on what scores you have already selected.
