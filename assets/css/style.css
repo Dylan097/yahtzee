@@ -62,6 +62,7 @@ h2 {
 li {
     list-style-type: square;
     margin-left: 15px;
+    border-bottom: 1px solid white;
 }
 
 .rules,
