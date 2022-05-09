@@ -314,6 +314,10 @@ button:active {
     .final-scores {
         left: 20%;
     }
+
+    header {
+        margin-top: 35px;
+    }
 }
 
 /* 550px width or less */
@@ -327,10 +331,6 @@ button:active {
 /* 460px width or less */
 
 @media screen and (max-width: 460px) {
-    header {
-        margin-top: 35px;
-    }
-
     .hold {
         border-width: 2px;
     }
@@ -339,6 +339,10 @@ button:active {
         height: 30px;
         width: 30px;
         border-radius: 5px;
+    }
+
+    nav>button {
+        display: block;
     }
 }
 
