@@ -33,6 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let rulesButton = document.getElementById('rules-button');
     // Get the rules
     let rules = document.getElementsByClassName('rules-and-strats')[0];
+    // Get the rules tab
+    let rulesTab = document.getElementsByClassName('rules')[0];
+    // Get the rules tab button
+    let rulesTabButton = document.getElementById('game-rules');
+    // Get the basic strategies tab
+    let basicsTab = document.getElementsByClassName('basics')[0];
+    // Get the basic strategies button
+    let basicsButton = document.getElementById('basic-strat');
+    // Get the advanced strategies tab
+    let advancedTab = document.getElementsByClassName('advanced')[0];
+    // Get the advanced strategies button
+    let advancedButton = document.getElementById('advanced-strat');
     // Open or close rules when button is clicked
     rulesButton.addEventListener('click', function () {
         if (rules.classList.contains('display')) {
@@ -48,6 +60,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 rules.classList.remove('display');
             });
         }
+        rulesTabButton.addEventListener('click', function () {
+            if (!rulesTab.classList.contains('display')) {
+                document.getElementsByClassName('display')[1].classList.remove('display');
+                rulesTab.classList.add('display');
+                document.getElementsByClassName('active')[0].classList.remove('active');
+                rulesTabButton.classList.add('active');
+            }
+        });
+        basicsButton.addEventListener('click', function () {
+            if (!basicsTab.classList.contains('display')) {
+                document.getElementsByClassName('display')[1].classList.remove('display');
+                basicsTab.classList.add('display');
+                document.getElementsByClassName('active')[0].classList.remove('active');
+                basicsButton.classList.add('active');
+            }
+        });
+        advancedButton.addEventListener('click', function () {
+            if (!advancedTab.classList.contains('display')) {
+                document.getElementsByClassName('display')[1].classList.remove('display');
+                advancedTab.classList.add('display');
+                document.getElementsByClassName('active')[0].classList.remove('active');
+                advancedButton.classList.add('active');
+            }
+        });
     });
 });
 
