@@ -49,6 +49,35 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 ![Rules](assets/images/yahtzee-rules.png)
 
+### Rules Nav Bar
+
+- Allow the user to switch between the rules of the game, basic strategies for the game and advanced strategies for the game
+- Shows the user which section they're currently on, and which section their mouse is hovering over
+
+![Rules Nav Bar](assets/images/yahtzee-rules-nav-bar.png)
+
+### Basic Strategies
+
+- Allows the user to understand one of the basic features of the game
+- Includes an example of how to use the feature
+
+![Basic Strategies](assets/images/yahtzee-basics-strategy.png)
+
+### Advanced Strategies
+
+- Allows the user to understand some more advanced strategies when the user has no dice rolls left, allowing them to potentially improve their scores
+- Includes examples of the strategies, to give the user and idea of the situations the strategies can be used in
+
+![Advanced Strategies](assets/images/yahtzee-advanced-strategy.png)
+
+### Rules Close Button
+
+- Allows the user to close the rules of the game
+- Can easily see if the user is hovering over the close button
+- Only displays when the rules and strategies are open
+
+![Close Button](assets/images/yahtzee-rules-close-button.png)
+
 ### High Score Display
 
 - Updates the players high score after each game whenever they get a new, higher score.
