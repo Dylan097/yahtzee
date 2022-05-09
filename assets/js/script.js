@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (rules.classList.contains('display')) {
             // Close rules if they're open
             rules.classList.remove('display');
+            document.getElementsByClassName('display')[0].classList.remove('display');
+            document.getElementsByClassName('active')[0].classList.remove('active');
+            rulesTab.classList.add('display');
+            rulesTabButton.classList.add('active');
         } else {
             // Open rules if they're closed
             rules.classList.add('display');
@@ -58,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Closes the rules
             close.addEventListener('click', function () {
                 rules.classList.remove('display');
+                document.getElementsByClassName('display')[0].classList.remove('display');
+                document.getElementsByClassName('active')[0].classList.remove('active');
+                rulesTab.classList.add('display');
+                rulesTabButton.classList.add('active');
             });
         }
         rulesTabButton.addEventListener('click', function () {
