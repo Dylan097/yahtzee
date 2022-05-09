@@ -209,6 +209,7 @@ button:hover,
 
 #dice-area {
     text-align: center;
+    margin-top: 5px;
 }
 
 .one {
@@ -317,6 +318,16 @@ button:active {
 @media screen and (max-width: 460px) {
     header {
         margin-top: 35px;
+    }
+
+    .hold {
+        border-width: 2px;
+    }
+
+    .dice-example {
+        height: 30px;
+        width: 30px;
+        border-radius: 5px;
     }
 }
 
