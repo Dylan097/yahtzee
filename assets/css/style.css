@@ -69,6 +69,7 @@ li {
 .basics,
 .advanced {
     display: none;
+    margin-bottom: 5px;
 }
 
 .display {
@@ -112,11 +113,12 @@ button {
     border-radius: 4px;
 }
 
-.active,
-button:hover,
-#close:hover {
-    color: black;
-    background: white;
+a {
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px 2px;
 }
 
 /* The Gameboard */
@@ -279,6 +281,14 @@ button:hover {
     cursor: pointer;
 }
 
+.active,
+button:hover,
+#close:hover,
+a:hover {
+    color: black;
+    background: white;
+}
+
 .selectable:hover {
     border-color: red;
     box-shadow: inset 0 0 1px 0;
@@ -286,7 +296,8 @@ button:hover {
 
 #roll-dice:active,
 #new-game:active,
-#rules-button:active {
+#rules-button:active,
+a:active {
     box-shadow: inset 0 0 5px 1px;
 }
 
