@@ -17,7 +17,7 @@
         <div id="rules-button">Rules</div>
     </header>
     <!-- The rules of the game -->
-    <div class="rules-and-strats">
+    <div class="rules-and-strats display">
         <!-- Closes the rules div -->
         <p id="close">x</p>
         <nav>
@@ -25,7 +25,7 @@
             <button id="basic-strat">Basic strategies</button>
             <button id="advanced-strat">Advanced strategies</button>
         </nav>
-        <div class="rules display">
+        <div class="rules">
             <h2>Rules</h2>
             <p>The aim of the game, is to get as high of a score as possible, by matching your dice with one of the
                 available scores!</p>
@@ -206,8 +206,78 @@
                 </li>
             </ul>
         </div>
-        <div class="advanced">
+        <div class="advanced display">
             <h2>Advanced strategies</h2>
+            <p>Here are some slightly more advanced strategies for players to work with!</p>
+            <ul>
+                <li>A useful strategy to the game yahtzee, is using the chance score, when you have a low score for a
+                    high dice number, like fives or sixes.<br>
+                    Here's an example of using this strategy below, with both sixes and chance score being shown:
+                    <ul>
+                        <li>
+                            <div class="example">
+                                <span class="six dice-example hold"></span>
+                                <span class="one dice-example"></span>
+                                <span class="three dice-example"></span>
+                                <span class="six dice-example hold"></span>
+                                <span class="two dice-example"></span>
+                                <div>0 rolls remaining this turn</div><br>
+                                <p>Sixes: <span class="score example-score">12</span></p>
+                                <p>Chance: <span class="score example-score">18</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    Since you have only 2 sixes, your best chance of getting the bonus score, is by trying to get 3 of a
+                    kind with sixes or better.
+                </li>
+                <li>Another good strategy to use, is choosing the ones when you have nothing else to go for, like a
+                    straight.<br>
+                    Here's some examples: <ul>
+                        <li>
+                            <div class="example">
+                                <span class="five dice-example hold"></span>
+                                <span class="four dice-example hold"></span>
+                                <span class="two dice-example hold"></span>
+                                <span class="one dice-example"></span>
+                                <span class="six dice-example hold"></span>
+                                <div>0 rolls remaining this turn</div><br>
+                                <p>ones: <span class="score example-score">1</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    In this example, you're trying to get a large straight, and only a 3 would get it for you. In some
+                    cases, like this, picking chance when you have ones available isn't a great move.<br>
+                    This is because chance is very useful for getting you out of situations where you have absolutely no
+                    scores to get.
+                </li>
+                <li>The next top strategy you can use, is when you have used all of the scores on your left board, or if
+                    the dice available to you doesn't give you a left score.<br>
+                    This strategy is highly risky, since it gives you a score of 0, and also removes the chance of
+                    getting any extra 50 points for multiple yahtzee's in a game.<br>
+                    If nothing is available to you on the right board as well, you can use the yahtzee score, if it's
+                    still available, to be able to get points for the easier scores.<br>
+                    Here's an example of it in use, with all of the left board, both straights already used and chance
+                    already used:
+                    <ul>
+                        <li>
+                            <div class="example">
+                                <span class="six dice-example"></span>
+                                <span class="four dice-example hold"></span>
+                                <span class="three dice-example"></span>
+                                <span class="four dice-example hold"></span>
+                                <span class="five dice-example"></span>
+                                <div>0 rolls remaining this turn</div><br>
+                                <p>YAHTZEE! <span class="score score-example">0</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    Since yahtzee is the hardest score to get, it's highly unlikely that you'd get a yahtzee, so to
+                    maximize your score in the situation stated above, you should go the yahtzee score.<br>
+                    You should then go down by score difficulty, which would be large straight, small straight, full
+                    house, four of a kind, three of a kind, in order of score difficulty.<br>
+                    This would depend on what scores you have already selected.
+                </li>
+            </ul>
         </div>
     </div>
     <!-- The players personal high score for this session -->
