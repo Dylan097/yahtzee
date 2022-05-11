@@ -136,6 +136,9 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
         - I found that when a user would get a yahtzee, they'd get 100 points when they selected yahtzee, instead of 50.
         - I found that I set the gotYahtzee boolean to true before checking if the user had got a yahtzee already.
         - I fixed this bug by checking if the score the user had selected was yahtzee when checking if the user had already got yahtzee, so that there wasn't a double scoring in the yahtzee score
+    - Multi Yahtzee wasn't updating total score
+        - When I was testing yahtzee, I got 2 yahtzees in one game, and noticed that my score for the left board was lower than the score I had recieved with that one yahtzee
+        - I fixed this by checking the class of the parent node of the score I had clicked, and then updating the score with the extra 50 points 
 
 #### Unfixed bugs
 
