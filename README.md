@@ -89,6 +89,8 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 - Fully responsive, when a score is clicked on will update the score for that game to represent the current score for the player.
 - Score updates will only work if the player doesn't have a score there already.
 - Clickable score boxes change to a pointer when hovered over.
+- Scores update with a grey score, representing what score a player would get if they were to select the score.
+- Grey score updates with every dice roll.
 
 ![Gameboard](assets/images/yahtzee-game-board.png)
 
