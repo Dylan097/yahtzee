@@ -262,6 +262,9 @@ function potentialScore() {
         }
         // Adds a score if the score isn't 0
         if (score !== 0) {
+            if (gotYahtzee && allScore[i].id !== 'yahtzee-score') {
+                score += multiYahtzee();
+            }
             allScore[i].innerHTML = score;
         } else {
             allScore[i].innerHTML = '';
