@@ -345,6 +345,11 @@ function newRound() {
             if (extraScore === 50) {
                 score += 50;
                 this.innerHTML = score;
+                if (this.parentNode.classList.contains('left-scores')) {
+                    leftScore(50);
+                } else if (this.parentNode.classList.contains('right-scores')) {
+                    rightScore(50);
+                }
             }
         }
         if (round < 13) {
