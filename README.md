@@ -160,7 +160,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 - Using the [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator), I can confirm that style.css came back with no errors.
 
 ![Jigsaw Validator](assets/images/jigsaw-validator-yahtzee.png)
-- Using [JSHint](https://jshint.com/), I found that there were no issues with the code.
+- Using [JSHint](https://jshint.com/), I found that there were no issues with the code in script.js.
 
 ![JSHint](assets/images/jshints-validation-yahtzee.png)
 
