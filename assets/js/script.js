@@ -328,6 +328,9 @@ function newRound() {
             rightScore(score);
         } else if (this.id === 'yahtzee-score') {
             score = yahtzee();
+            if (score === 50) {
+                gotYahtzee = true;
+            }
             document.getElementById('yahtzee-score').innerHTML = score;
             rightScore(score);
         } else if (this.id === 'chance-score') {
@@ -671,9 +674,6 @@ function yahtzee() {
         if (counter === 4) {
             // All dice found the same. Score increases by 50
             score = 50;
-            // Yahtzee has been found, all scores can now increase by an extra 50 points if they get yahtzee
-            // This rules doesn't include small straight or large staright
-            gotYahtzee = true;
         }
     }
     return score;
