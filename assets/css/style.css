@@ -344,6 +344,10 @@ button:active {
     nav>button {
         display: block;
     }
+
+    h1 {
+        font-size: 400%;
+    }
 }
 
 /* 320px width or less */
