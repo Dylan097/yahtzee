@@ -1,12 +1,32 @@
 // The dice on the board
 let dice = document.getElementsByClassName('dice');
+// Has the user already got yahtzee
 let gotYahtzee = false;
+// Rounds completed
 let round = 0;
-let newGameButton = document.getElementById('new-game');
+const newGameButton = document.getElementById('new-game');
+// How many rolls are left this round
+let diceRoll = 3;
+let rollNumber = document.getElementById('remaining-rolls');
+// individual dice values
+let dices = [0, 0, 0, 0, 0];
+// Left scores subtotal (before bonus)
+let leftScoreSub = document.getElementById('left-subtotal');
+// Left scores total (After bonus)
+let leftScoreTotal = document.getElementsByClassName('left-total');
+// Right scores total
+let rightScoreTotal = document.getElementById('right-scores');
+// Both total right scores
+let bothRightScores = document.getElementsByClassName('right-total');
+// Total score
+let totalScore = document.getElementById('game-total');
+// High score
+let highScore = document.getElementById('high-score-total');
+
 // Event listener for DOM load
 document.addEventListener("DOMContentLoaded", function () {
     // Dice roll button
-    let diceRollButton = document.getElementById("roll-dice");
+    const diceRollButton = document.getElementById("roll-dice");
     // Roll the dice when the roll dice button is clicked
     diceRollButton.addEventListener('click', rollDice);
     for (let i = 0; i < dice.length; i++) {
@@ -30,21 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
         selections[i].addEventListener('click', newRound);
     }
     // Get the rules button
-    let rulesButton = document.getElementById('rules-button');
+    const rulesButton = document.getElementById('rules-button');
     // Get the rules
-    let rules = document.getElementsByClassName('rules-and-strats')[0];
+    const rules = document.getElementsByClassName('rules-and-strats')[0];
     // Get the rules tab
-    let rulesTab = document.getElementsByClassName('rules')[0];
+    const rulesTab = document.getElementsByClassName('rules')[0];
     // Get the rules tab button
-    let rulesTabButton = document.getElementById('game-rules');
+    const rulesTabButton = document.getElementById('game-rules');
     // Get the basic strategies tab
-    let basicsTab = document.getElementsByClassName('basics')[0];
+    const basicsTab = document.getElementsByClassName('basics')[0];
     // Get the basic strategies button
-    let basicsButton = document.getElementById('basic-strat');
+    const basicsButton = document.getElementById('basic-strat');
     // Get the advanced strategies tab
-    let advancedTab = document.getElementsByClassName('advanced')[0];
+    const advancedTab = document.getElementsByClassName('advanced')[0];
     // Get the advanced strategies button
-    let advancedButton = document.getElementById('advanced-strat');
+    const advancedButton = document.getElementById('advanced-strat');
     // Open or close rules when button is clicked
     rulesButton.addEventListener('click', function () {
         if (rules.classList.contains('display')) {
@@ -58,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Open rules if they're closed
             rules.classList.add('display');
             // Get the close button
-            let close = document.getElementById('close');
+            const close = document.getElementById('close');
             // Closes the rules
             close.addEventListener('click', function () {
                 rules.classList.remove('display');
@@ -94,13 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-// How many rolls are left this round
-let diceRoll = 3;
-let rollNumber = document.getElementById('remaining-rolls');
-
-// individual dice values
-let dices = [0, 0, 0, 0, 0];
 
 /**
  * Rolls any dice that doesn't have the
@@ -144,7 +157,7 @@ function rollDice() {
                 }
 
                 // Random number for the dice
-                let randomNumber = Math.floor(Math.random() * 6);
+                const randomNumber = Math.floor(Math.random() * 6);
 
                 // Switch statement to add the relevant class to the selected dice
                 switch (randomNumber) {
@@ -184,24 +197,6 @@ function rollDice() {
         potentialScore();
     }
 }
-
-// Left scores subtotal (before bonus)
-let leftScoreSub = document.getElementById('left-subtotal');
-
-// Left scores total (After bonus)
-let leftScoreTotal = document.getElementsByClassName('left-total');
-
-// Right scores total
-let rightScoreTotal = document.getElementById('right-scores');
-
-// Both total right scores
-let bothRightScores = document.getElementsByClassName('right-total');
-
-// Total score
-let totalScore = document.getElementById('game-total');
-
-// High score
-let highScore = document.getElementById('high-score-total');
 
 /**
  * Shows potential score with
