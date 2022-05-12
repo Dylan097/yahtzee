@@ -125,6 +125,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
     - Bonus scores box wasn't working properly with design responsiveness.
         - When I was testing screen sizes, the score for the bonus points would drop to the left board total score, moving the box for the total score to the left.
         - The bonus box previously had an explanation of how to get the bonus. This has been moved to the bottom of the gameboard, and is linked appropriately, which has fixed the bug.
+        - The rules button had not been created when this bug was fixed. The bonus explanation is now in the game rules.
     - Score for the sixes wasn't updating with the click
         - When Testing, I noticed that whenever I clicked on the sixes box, the score wouldn't update
         - I hadn't added the sixes score function to the new round function, so when the sixes box was selected, the sixes score function was never getting called. 
