@@ -113,6 +113,7 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
 
 - I have tested the website on the following browsers: Google Chrome, Safari (mobile version), Microsoft Edge.
 - I can confirm the website is fully responsive to all screen sizes on the browsers stated.
+- When testing each of the game scores, I done manual testing by manually changing the dice numbers to match the code I was testing, to make sure it worked as intended
 
 ### Bugs 
 #### Fixed Bugs
