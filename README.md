@@ -142,10 +142,14 @@ Yahtzee is a game where you have to roll 5 dice and fill in a score sheet to get
     - Multi Yahtzee wasn't updating total score
         - When I was testing yahtzee, I got 2 yahtzees in one game, and noticed that my score for the left board was lower than the score I had recieved with that one yahtzee
         - I fixed this by checking the class of the parent node of the score I had clicked, and then updating the score with the extra 50 points 
+    - Multi Yahtzee score was recieved even without yahtzee being recieved
+        - If the player selects anything other than yahtzee when they get a yahtzee, the score gives an extra 50 points
+        - I found that the boolean gotYahtzee updated to true when potentialScore was being called and the player got a yahtzee
+        - I fixed this by moving the gotYahtzee boolean from the yahtzee function to the newRound function, and checked if the player got 50 points from the yahtzee function before calling gotYahtzee as true
 
 #### Unfixed bugs
 
-- If the player selects anything other than yahtzee when they get a yahtzee, the score gives an extra 50 points
+- None
 
 ### Validation
 
